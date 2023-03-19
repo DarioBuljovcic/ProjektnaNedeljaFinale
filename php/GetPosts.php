@@ -39,8 +39,10 @@
         </div>
     </div>
     <div class='post-comments'>
+        <form >
             <input class= "commentValue" type='text' placeholder='Napisi komentar...'>
             <button id="postComment" class="postComment">Comment</button>
+        </form>
             <?php
             $post_id = $row['Id'];
             $sql = "SELECT ALL* FROM comments WHERE post_id=$post_id ORDER BY post_id  ";

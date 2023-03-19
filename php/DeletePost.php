@@ -1,10 +1,9 @@
 <?php 
     include 'config.php';
     session_start();
-    $id = $_SESSION['id'];
-    $msg = $_POST['msg'];
+    $id = $_POST['id'];
 
-    $sql = "DELETE FROM post WHERE user_id=$id and text='$msg'";
+    $sql = "DELETE FROM post WHERE id=$id";
     $result = mysqli_query($conn,$sql);
     if($result){
         echo $result;

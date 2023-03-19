@@ -35,6 +35,9 @@
             }
         }
     }
+    $imgSql = "SELECT img FROM users WHERE Id=$id";
+    $img = mysqli_query($conn,$imgSql);
+    $img = mysqli_fetch_assoc($img)['img'];
 ?>
 
 
@@ -56,13 +59,14 @@
     <script src="js/GetSetPost.js" ></script>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="navsearch">
-         <h2><a href="hexa.html">Projektna <span>nedelja</span></a></h2>
+         <h2><a href="hexa.php">Projektna <span>nedelja</span></a></h2>
         <input type="text" placeholder="Pretrazite" id="search-input" >
         <button id="aa" aria-pressed="false"><i class="fa-solid fa-magnifying-glass"></i></button>
         <div class="divimg">
             <!--<a href="./user.html"><img src="img/profile2.jpg" width="100%" class="navimg" alt="" srcset=""></a>-->
-            <img src="img/profile2.jpg" width="100%" class="navimg" alt="" srcset="">
+            <img src="img/<?php echo $img?>" width="100%" class="navimg" alt="" srcset="">
         </div>
     </div>
     <h3 id="userneki"></h3>
@@ -78,15 +82,21 @@
 
             <div class="left-wrapper">
                 <div class="inner-container left-side">
-                <h4><i class="fa-solid fa-star" id="bluestar"></i>Top 5 most liked users</h4>  
+                  
                 </div>   
             </div>
                  
-
-
+            <section class="conversation">
+                <button class="closeBtn closeConv">X</button>
+                <div class="messages"></div>
+                <div class="controls">
+                    <input type="text" class="msg">
+                    <button class="sendMsg">Posalji</button>
+                </div>
+            </section>
 
             <div class="inner-container popup-prof">
-                <a href="./user.html"><img src="img/profile2.jpg" alt="" class="profile"></a>
+                <a href="./user.html"><img src="img/<?php echo $img?>" alt="" class="profile"></a>
                 
                 <p><b id="username" name = "<?php echo $id?>"><?php echo $username?></b></p>
                 <p id="email"><?php echo $email?></p>

@@ -5,6 +5,9 @@
     $sql = "SELECT SUM(likes) as likes,username FROM post GROUP BY username ORDER BY likes DESC LIMIT 5";
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0):
+?>
+<h4><i class="fa-solid fa-star" id="bluestar"></i>Top 5 most liked users</h4>        
+        <?php
         while($row = mysqli_fetch_assoc($result)):
             $username = $row['username'];
             $imgSql = "SELECT img FROM users WHERE username='$username'";

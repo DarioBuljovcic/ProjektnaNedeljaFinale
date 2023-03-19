@@ -1,30 +1,31 @@
 
 $(document).ready(()=>{
 
-    
-    function loadPost(){
+    function loadTop5(){
         $.ajax({
             type:'POST',
             url:'php/MostLikedUsers.php',
             success:(data)=>{
-                $(".left-side").append(data);
+                $(".left-side").html(data);
             }
         })
-
+    }    
+    function loadPost(){        
         $.ajax({
             type:'POST',
             url:'php/GetPosts.php',
             success: function(data){
                 $("#allPostsWrapper").html(data);
-                $("#removePost").on('click',function(e) 
+                $(".remove-btn").on('click',function(e) 
                 {
                     e.preventDefault();
-                    let msg = $(e.target).closest('.single-post').find('.post-content').text();
+                    //let msg = $(e.target).closest('.single-post').find('.post-content').text();
+                    let id = $(e.target).closest('.single-post').attr("name");
                     $.ajax({
                         type:'POST',
                         url:'php/DeletePost.php',
                         data:{
-                            msg: msg
+                            id:id
                         },
                         success: function(data){
                             if(data){
@@ -40,24 +41,27 @@ $(document).ready(()=>{
                 $("#postBtn").on('click',function(e) 
                 {
                     e.preventDefault();
-                    let msg = $("#postContent").val();
-                    let username = $("#username").text();
-                    let id = $("#username").attr('name');
-                    $.ajax({
-                        type:'POST',
-                        url:'php/SendPost.php',
-                        data:{
-                            msg: msg,
-                            username: username,
-                            id: id
-                        },
-                        success: function(data){
-                            if(data){
-                                loadPost();
-                                $("#form").trigger("reset");
+                    if($("#postContent").val()){
+                        
+                        let msg = $("#postContent").val();
+                        let username = $("#username").text();
+                        let id = $("#username").attr('name');
+                        $.ajax({
+                            type:'POST',
+                            url:'php/SendPost.php',
+                            data:{
+                                msg: msg,
+                                username: username,
+                                id: id
+                            },
+                            success: function(data){
+                                if(data){
+                                    loadPost();
+                                    $("#form").trigger("reset");
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
                 });
                 
                 $(".like-btn").on('click',function(e) 
@@ -73,7 +77,9 @@ $(document).ready(()=>{
                             data:{
                                 id: id,
                                 likes: likes
-                            },success:function(data){
+                            },success:function(){
+                                loadTop5();
+                                $(".left-side").trigger("reset");
                             }
                         })
                     } else {
@@ -83,10 +89,13 @@ $(document).ready(()=>{
                             data:{
                                 id: id,
                                 likes: likes-1
-                            },success:function(data){
+                            },success:function(){
+                                loadTop5();
+                                $(".left-side").trigger("reset");
                             }
                         })
                     }
+                    
                 });
             
                 $("#search-input").on('keyup',function(e) 
@@ -102,6 +111,24 @@ $(document).ready(()=>{
                         },
                         success: function(data){
                             $("#userneki").html(data);
+                            msgScreen();
+                        }
+                    })
+                });
+                $("#aa").on('click',function(e) 
+                {
+                    e.preventDefault();
+                    let user = $("#search-input").val();
+                    $("#userneki").css('max-height','260px');//document.querySelector('#userneki')
+                    $.ajax({
+                        type:'POST',
+                        url:'php/UserSearch.php',
+                        data:{
+                            username: user
+                        },
+                        success: function(data){
+                            $("#userneki").html(data);
+                            msgScreen();
                         }
                     })
                 });
@@ -123,9 +150,72 @@ $(document).ready(()=>{
                         }
                     })
                 });
+                $(".closeConv").on('click',function(e) 
+                {
+                    $("body").css('overflow','');
+                    $(".conversation").css('transform','ScaleY(0)');
+                    $(".overlay").css('transform','scale(0)');
+                    $(".sendMsg").off();
+                    clearInterval(interval);
+                });
             }
         })
     }
+    function msgScreen(){
+        let reciver;
+        $(".fa-paper-plane-o").click((e)=>{
+            //funkcija za prikaz poruka
+            function showMsgs(){
+                reciver = $(e.target).closest(".singleitemsearchh").attr("name");
+                
+                $.ajax({
+                    type:'POST',
+                    url:'php/ShowMessages.php',
+                    data:{
+                        id:reciver
+                    },
+                    success: function(data){
+                        $(".messages").html(data);
+                    }
+                })
+            }
+            showMsgs();
+            $("body").css('overflow','hidden');
+            $(".overlay").css('transform','scale(1)');
+            $(".conversation").css('transform','ScaleY(1)');
+            //funkcija za refreshovanje poruka
+            interval=setInterval(() => {
+                showMsgs();
+                $(".conversation").trigger("refresh");
+            }, 1000);
+            //funkcija za slanje poruka
+            $(".sendMsg").click((e)=>{
+                e.preventDefault();
+                if(reciver){
+                    console.log(reciver)
+                    let msg = $(e.target).closest('.controls').find('.msg').val();
+                    $(e.target).closest('.controls').find('.msg').val("");
+                    $.ajax({
+                        type:'POST',
+                        url:'php/SendMessage.php',
+                        data:{
+                            id:reciver,
+                            msg:msg
+                        },
+                        success: function(data){
+                            showMsgs();
+                            $(".conversation").trigger("refresh");
+                        }
+                    })
+                }
+            
+            })
+        })
+    }
+    let interval;
+    loadTop5();
     loadPost();
-   
+    
+    
+    
 });

@@ -51,12 +51,10 @@ const searchBar = document.querySelector(".navsearch");
 let list = document.getElementById("userneki");
 let popupUser = document.querySelector(".popup-prof");
 let popupUserImg = document.querySelector(".navimg");
+let msgBtn = document.querySelectorAll(".fa-paper-plane-o");
 
-// Add a click event listener to the document object
 document.addEventListener("click", function(event) {
-  // Check if the target of the click event is inside the search bar
-  if (!searchBar.contains(event.target) && !list.contains(event.target)) {
-    // If the target is not inside the search bar, hide the search bar
+  if (!searchBar.contains(event.target)) {
     list.innerHTML ="";
     list.style.maxHeight="0px";
     document.querySelector('#aa').ariaPressed="false";
@@ -99,7 +97,6 @@ document.querySelector('#closeModal').addEventListener('click', () =>{
     document.querySelector('.custom-modal').style.display = 'none'
 })
 document.querySelector('#editForm').addEventListener('submit', e =>{
-    console.log($(e.target).closest("#korisnicko_ime"))
     e.preventDefault()
     let username=$("#korisnicko_ime").val();
     let email=$("#edit_email").val();
@@ -113,7 +110,7 @@ document.querySelector('#editForm').addEventListener('submit', e =>{
                 email:email,
                 password:password
             },success:()=>{                   
-                window.location.href = "index.php";
+                window.location.href = "hexa.php";
             }
         })
     }
