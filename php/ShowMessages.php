@@ -7,17 +7,28 @@
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){
-            if($row['user_ids']=="|$id.$reciver|"){        
+            if($row['user_ids']=="|$id.$reciver|"){
+                $sql = "SELECT img FROM users WHERE Id= $id or Id=$reciver";
+                $imgU = mysqli_query($conn,$sql);
+                $imgU = mysqli_fetch_assoc($imgU)['img'];
+                $sql = "SELECT img FROM users WHERE Id=$reciver";
+                $imgR = mysqli_query($conn,$sql);
+                $imgR = mysqli_fetch_assoc($imgR)['img'];      
 ?>
 
-<div class='single-msg-S' name="<?php echo $row['id']?>">
-    <?php echo $row['messages']?>
+<div class='single-msg-S .single-msg' name="<?php echo $row['id']?>">
+    
+    <div class="msgText" style="background-color: rgb(174, 133, 232);">  <?php echo $row['messages']?> </div>
+    <img src="img/<?php echo $imgU?>" alt="img of the user" class="msgImg">
+
 </div>
+
 
 <?php } else{ ?>
     
-<div class='single-msg-R' name="<?php echo $row['id']?>">
-    <?php echo $row['messages']?>
+<div class='single-msg-R .single-msg' name="<?php echo $row['id']?>">
+    <img src="img/<?php echo $imgR?>" alt="img of the user" class="msgImg">
+    <div class="msgText" style="background-color: rgb(101, 187, 253);">  <?php echo $row['messages']?> </div>   
 </div>
 
 <?php } ?>

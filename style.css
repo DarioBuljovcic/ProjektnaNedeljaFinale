@@ -909,25 +909,49 @@ footer{
 	background-color: transparent;
 	width:100%;
 }
+.single-msg{
+    
+}
 .single-msg-S{
 	padding: 10px 5px;
 	margin-left:auto;
 	text-align: right;
-	max-width: max-content;
-	display: block;
+    /*  */
+    padding: 10px 5px;
+	margin-left:auto;
+	text-align: right;
+	display: flex;
 	border-radius: 3px;
-	background-color: rgb(174, 133, 232);
+	gap:10px;
+    align-items: center;
 	color:white;
+    justify-content: flex-end;
 }
 .single-msg-R{
 	padding: 10px 5px;
 	top:15px;
 	left:15px;
-	display: block;
-	max-width: max-content;
+    /*  */
+    padding: 10px 5px;
+	margin-left:auto;
+	text-align: right;
+	display: flex;
 	border-radius: 3px;
-	background-color: rgb(101, 187, 253);
+	gap:10px;
+    align-items: center;
 	color:white;
+}
+.msgText{
+    text-align: center;
+    border-radius: 3px;
+    padding-inline: 10px;
+    padding-block: 5px;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+.msgImg{
+    width: 40px;
+    border-radius: 50%;
 }
 .loadMore{
     padding:10px;
@@ -941,3 +965,4 @@ footer{
     margin-inline:auto;
     margin-block: 15px;
 }
+

@@ -175,6 +175,9 @@ $(document).ready(()=>{
     function msgScreen(){
         let reciver;
         $(".fa-paper-plane-o").click((e)=>{
+            $(".messages").animate({
+                scrollTop: $(".messages").prop("scrollHeight")
+            }, 500);
             //funkcija za prikaz poruka
             function showMsgs(){
                 reciver = $(e.target).closest(".singleitemsearchh").attr("name");
@@ -187,9 +190,7 @@ $(document).ready(()=>{
                     },
                     success: function(data){
                         $(".messages").html(data);
-                        $(".messages").animate({
-                            scrollTop: $(".messages").prop("scrollHeight")
-                        }, 500);
+                        
                     }
                 })
             }
