@@ -6,9 +6,8 @@
     $post_id = $_POST['post_id'];
     $sql = "INSERT INTO comments(comment,user_id,post_id) values ('$comment',$id,$post_id)";
     $result = mysqli_query($conn,$sql);
-    if($result){
-        echo $comment;
-    }else {
-        echo 0;
-    }
+    $result = mysqli_fetch_assoc($result)
 ?>
+<div class="single-comment">
+    <span style="color:gray" id="usernamecom"><?php echo $_SESSION['username']?></span><?php echo $comment?> 
+</div>

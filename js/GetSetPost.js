@@ -115,7 +115,7 @@ $(document).ready(()=>{
                     $("#userneki").css('max-height','260px');//document.querySelector('#userneki')
                     $.ajax({
                         type:'POST',
-                        url:'php/UserSearch.php',
+                        url:'php/UserSearch2.php',
                         data:{
                             username: user
                         },
@@ -145,6 +145,7 @@ $(document).ready(()=>{
                 
                 $(".postComment").on('click',function(e) 
                 {
+                    console.log( "click")
                     e.preventDefault();
                     let comment = $(e.target).closest('.single-post').find(".commentValue").val();
                     let post_id = $(e.target).closest('.single-post').attr("name");
