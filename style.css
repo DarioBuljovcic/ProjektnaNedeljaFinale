@@ -941,3 +941,6 @@ footer{
     margin-inline:auto;
     margin-block: 15px;
 }
+h2{
+    color: red;
+}
