@@ -2,7 +2,9 @@
     include 'config.php';
     session_start();
     $id = $_SESSION['id'];
-    $sql = "SELECT * FROM post ORDER BY Id DESC";
+    $limit = $_POST['limit'];
+    $rowNum=5;
+    $sql = "SELECT * FROM post ORDER BY Id DESC LIMIT $limit";
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){
@@ -62,5 +64,6 @@
     </div>
 </div>
 <?php }}?>
+<button class="loadMore" name="<?php echo $limit + $rowNum?>">LoadMore</button>
 
 

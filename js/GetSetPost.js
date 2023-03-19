@@ -10,12 +10,22 @@ $(document).ready(()=>{
             }
         })
     }    
-    function loadPost(){        
+    function loadPost(limit){
         $.ajax({
             type:'POST',
             url:'php/GetPosts.php',
+            data:{
+                limit:limit
+            },
             success: function(data){
                 $("#allPostsWrapper").html(data);
+                $(".loadMore").on('click',function(e) 
+                {
+                    let limits = $(".loadMore").attr("name");
+                    loadPost(limits);
+                    $("#form").trigger("reset");
+                });
+
                 $(".remove-btn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -176,6 +186,9 @@ $(document).ready(()=>{
                     },
                     success: function(data){
                         $(".messages").html(data);
+                        $(".messages").animate({
+                            scrollTop: $(".messages").prop("scrollHeight")
+                        }, 500);
                     }
                 })
             }
@@ -203,6 +216,9 @@ $(document).ready(()=>{
                             msg:msg
                         },
                         success: function(data){
+                            $(".messages").animate({
+                                scrollTop: $(".messages").prop("scrollHeight")
+                            }, 500);
                             showMsgs();
                             $(".conversation").trigger("refresh");
                         }
@@ -213,8 +229,9 @@ $(document).ready(()=>{
         })
     }
     let interval;
+    let rowNum=5;
     loadTop5();
-    loadPost();
+    loadPost(rowNum);
     
     
     

@@ -929,3 +929,15 @@ footer{
 	background-color: rgb(101, 187, 253);
 	color:white;
 }
+.loadMore{
+    padding:10px;
+    border: 2px solid #424868;
+    color: black;
+    font-weight: bold;
+    background-color: #424868;
+    transition: 0.3s;
+    padding: 8px 0px;
+    border-radius: 10px;
+    margin-inline:auto;
+    margin-block: 15px;
+}
