@@ -700,7 +700,7 @@ footer{
         
     }
     #userneki{
-        left: 5%;
+        left: 6%;
     }
     .container{
         width: 100%;
@@ -956,13 +956,17 @@ footer{
 .loadMore{
     padding:10px;
     border: 2px solid #424868;
-    color: black;
-    font-weight: bold;
-    background-color: #424868;
+    color: white;
+    background-color: #181c2f;
     transition: 0.3s;
-    padding: 8px 0px;
+    padding: 4px 10px;
     border-radius: 10px;
     margin-inline:auto;
     margin-block: 15px;
+    position: absolute;
+    right: 38%;
+}
+.right-side{
+    padding-bottom: 30px;
 }
 

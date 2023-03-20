@@ -153,7 +153,7 @@
         <button id="deleteProfile">Obrisi profil</button>
     </div>
 
-    
+    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/profile2.jpg" width="100%" class="navimg" id="imgsmall"alt="" srcset=""></footer>
 
     <script src="js/Session.js"></script>
     <script src="js/AllPages.js"></script> 

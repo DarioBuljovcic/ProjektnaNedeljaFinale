@@ -47,24 +47,94 @@ const likeDislike = btn =>{
 
 
 
+// const searchBar = document.querySelector(".navsearch");
+// let list = document.getElementById("userneki");
+// let popupUser = document.querySelector(".popup-prof");
+// let popupUserImg = document.querySelector(".navimg");
+// let msgBtn = document.querySelectorAll(".fa-paper-plane-o");
+
+// document.addEventListener("click", function(event) {
+//   if (!searchBar.contains(event.target)) {
+//     list.innerHTML ="";
+//     list.style.maxHeight="0px";
+//     document.querySelector('#aa').ariaPressed="false";
+//   }
+//   let edit = document.querySelector('#editAccount');
+//   if(!popupUserImg.contains(event.target) && !popupUser.contains(event.target) || edit.contains(event.target))
+//   {
+//     popupUser.style.transform='translateY(-450px)';
+//   }
+// });
+
+// document.querySelector('.divimg').addEventListener('click',()=>{
+//     let popup=document.querySelector('.popup-prof');
+
+//     if(popup.style.transform=='translateY(0px)')
+//     {
+//         popup.style.transform='translateY(-450px)';
+//         popup.style.opacity="0";
+//     }
+//     else{
+//         popup.style.transform='translateY(0px)';
+//         popup.style.opacity="1";
+//     }
+// });
+
+var w = window.innerWidth;
+//Search bar nestaje
 const searchBar = document.querySelector(".navsearch");
 let list = document.getElementById("userneki");
 let popupUser = document.querySelector(".popup-prof");
 let popupUserImg = document.querySelector(".navimg");
-let msgBtn = document.querySelectorAll(".fa-paper-plane-o");
-
+// let popupUserImg2 = document.querySelector("#imgsmall");
+// Add a click event listener to the document object
 document.addEventListener("click", function(event) {
-  if (!searchBar.contains(event.target)) {
+  // Check if the target of the click event is inside the search bar
+  if (!searchBar.contains(event.target) && !list.contains(event.target)) {
+    // If the target is not inside the search bar, hide the search bar
     list.innerHTML ="";
     list.style.maxHeight="0px";
     document.querySelector('#aa').ariaPressed="false";
   }
-  let edit = document.querySelector('#editAccount');
-  if(!popupUserImg.contains(event.target) && !popupUser.contains(event.target) || edit.contains(event.target))
+  if(w<=425)
   {
-    popupUser.style.transform='translateY(-450px)';
+    if(!popupUserImg.contains(event.target) && !popupUser.contains(event.target) && !document.querySelector('#imgsmall').contains(event.target))
+    {
+      popupUser.style.transform='translateY(100svh)';
+    }
   }
+  else{
+    if(!popupUserImg.contains(event.target) && !popupUser.contains(event.target) && !document.querySelector('#imgsmall').contains(event.target))
+    {
+      popupUser.style.transform='translateY(-450px)';
+    }
+  }
+
+  if(w<=425)
+  {
+    let popuptopfive=document.querySelector('.left-wrapper .left-side');
+  let popuptopfive2=document.querySelector('.left-wrapper');
+  let body = document.querySelector('body');
+  let zvezda=document.querySelector("#footstar");
+
+  if(!popuptopfive2.contains(event.target) && !popuptopfive.contains(event.target) && !zvezda.contains(event.target))
+  {
+    popuptopfive.style.transform='translateY(100svh)';
+    popuptopfive.style.opacity="0";
+    if(!document.querySelector('#imgsmall').contains(event.target))
+        body.style.overflow='visible'; 
+
+    popuptopfive2.style.transform='translateY(100svh)';
+    popuptopfive2.style.opacity="0";
+  }
+  }
+//   else if(!popupUserImg2.contains(event.target) && !popupUser.contains(event.target))
+//   {
+//     popupUser.style.transform='translateY(-450px)';
+//   }
 });
+
+document.querySelector('#allPostsWrapper').innerHTML
 
 document.querySelector('.divimg').addEventListener('click',()=>{
     let popup=document.querySelector('.popup-prof');
@@ -79,6 +149,70 @@ document.querySelector('.divimg').addEventListener('click',()=>{
         popup.style.opacity="1";
     }
 });
+
+
+
+
+    // document.querySelector('#imgsmall').addEventListener('click',()=>{
+    //     let popup=document.querySelector('.popup-prof');
+    
+    //     if(popup.style.transform=='translateY(0px)')
+    //     {
+    //         popup.style.transform='translateY(-450px)';
+    //         popup.style.opacity="0";
+    //     }
+    //     else{
+    //         popup.style.transform='translateY(0px)';
+    //         popup.style.opacity="1";
+    //     }
+    // });
+
+
+var w = window.innerWidth;
+if(w<=425)
+{
+    document.querySelector('#imgsmall').addEventListener('click',()=>{
+        let popup=document.querySelector('.popup-prof');
+        let body = document.querySelector('body');
+        
+        if(popup.style.transform=='translateY(3svh)')
+        {
+            popup.style.transform='translateY(100svh)';
+            popup.style.opacity="0";
+            body.style.overflow='visible';
+        }
+        else{
+            popup.style.transform='translateY(3svh)';
+            popup.style.opacity="1";
+            body.style.overflow='hidden';
+        }
+    });
+
+    document.querySelector('#footstar').addEventListener('click',()=>{
+        let popup=document.querySelector('.left-wrapper .left-side');
+        let body = document.querySelector('body');
+        let popup2=document.querySelector('.left-wrapper');
+        
+        if(popup.style.transform=='translateY(-1svh)')
+        {
+            popup.style.transform='translateY(100svh)';
+            popup.style.opacity="0";
+            body.style.overflow='visible';
+
+            popup2.style.transform='translateY(100svh)';
+            popup2.style.opacity="0";
+        }
+        else{
+            popup.style.transform='translateY(-1svh)';
+            popup.style.opacity="1";
+            body.style.overflow='hidden';
+
+            popup2.style.transform='translateY(-1svh)';
+            popup2.style.opacity="1";
+        }
+    });
+}
+
 
 document.querySelector('#logout').addEventListener('click', e =>{
     
@@ -125,3 +259,6 @@ document.querySelector('#deleteProfile').addEventListener('click', e =>{
         user.delete()
     }
 })
+
+
+

@@ -64,6 +64,6 @@
     </div>
 </div>
 <?php }}?>
-<button class="loadMore" name="<?php echo $limit + $rowNum?>">LoadMore</button>
+<button class="loadMore" name="<?php echo $limit + $rowNum?>">Load More</button>
 
 
