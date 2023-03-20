@@ -87,10 +87,10 @@
             </div>
                  
             <section class="conversation">
-                <button class="closeBtn closeConv">X</button>
+                <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
                 <div class="messages"></div>
                 <div class="controls">
-                    <input type="text" class="msg">
+                    <input type="text" class="msg" placeholder="New message">
                     <button class="sendMsg">Posalji</button>
                 </div>
             </section>

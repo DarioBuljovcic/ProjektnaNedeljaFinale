@@ -885,14 +885,16 @@ footer{
 .controls{
 	position: absolute;
 	bottom: 10px;
-	left:2.5%;
+	left:0%;
 	padding-block: 10px;
 	padding-inline: 5px;
-	border:1px solid white;
 	border-radius: 5px;
-	width: 95%;
+	width: 100%;
 	display: flex;
 	gap:20px;
+    padding: 3px 20px;
+    border-top: 1px solid gray;
+    padding-top: 12px;
 }
 .controls button{
 	padding: 5px;
@@ -972,4 +974,16 @@ footer{
 .right-side{
     padding-bottom: 30px;
 }
-
+.closeConv
+{
+    color: white;
+    padding: 5px 10px;
+    transition: 0.3s;
+    border: 1px solid #6b6a6a;
+    border-radius: 100%;
+    font-size: 10px;
+    position: absolute;
+    top: -11px;
+    right: -10px;
+    background-color: #181c2f;
+}
