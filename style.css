@@ -833,6 +833,9 @@ footer{
         left: 131px;
         color: #6b6a6a;
     }
+    .right-side{
+        margin-bottom: 61px;
+    }
   }
 .overlay{
 	width: 100vw;
