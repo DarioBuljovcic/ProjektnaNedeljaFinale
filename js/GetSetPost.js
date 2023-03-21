@@ -19,13 +19,15 @@ $(document).ready(()=>{
             },
             success: function(data){
                 $("#allPostsWrapper").html(data);
+                $(".loadMore").off();
                 $(".loadMore").on('click',function(e) 
                 {
                     rowNum = $(".loadMore").attr("name");
-                    loadPost(limits);
+                    loadPost(rowNum);
                     $("#form").trigger("reset");
                 });
 
+                $(".remove-btn").off();
                 $(".remove-btn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -47,7 +49,7 @@ $(document).ready(()=>{
                     })
                 });
             
-            
+                $("#postBtn").off();
                 $("#postBtn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -73,7 +75,8 @@ $(document).ready(()=>{
                         })
                     }
                 });
-                
+
+                $(".like-btn").off()
                 $(".like-btn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -107,7 +110,8 @@ $(document).ready(()=>{
                     }
                     
                 });
-            
+
+                $("#search-input").off()
                 $("#search-input").on('keyup',function(e) 
                 {
                     e.preventDefault();
@@ -125,6 +129,8 @@ $(document).ready(()=>{
                         }
                     })
                 });
+
+                $("#aa").off()
                 $("#aa").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -142,7 +148,8 @@ $(document).ready(()=>{
                         }
                     })
                 });
-                
+
+                $(".postComment").off();
                 $(".postComment").on('click',function(e) 
                 {
                     console.log( "click")
@@ -161,6 +168,8 @@ $(document).ready(()=>{
                         }
                     })
                 });
+
+                $(".closeConv").off();
                 $(".closeConv").on('click',function(e) 
                 {
                     $("body").css('overflow','');
