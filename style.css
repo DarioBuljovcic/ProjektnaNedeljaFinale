@@ -903,6 +903,11 @@ footer{
 	color: white;
 	font-weight: 500;	
 	background-color: transparent;
+    margin-left: -22px;
+    padding: 5px 17px;
+    border-left: 1px solid #25293f;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .controls input{
 	transition: all .2s;
@@ -913,6 +918,11 @@ footer{
 	font-weight: 500;	
 	background-color: transparent;
 	width:100%;
+    border-right: 1px solid #25293f;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 13px;
+    outline: none;
 }
 .single-msg{
     
@@ -985,5 +995,4 @@ footer{
     position: absolute;
     top: -11px;
     right: -10px;
-    background-color: #181c2f;
 }

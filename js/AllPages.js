@@ -226,7 +226,6 @@ document.querySelector('#logout').addEventListener('click', e =>{
 
 document.querySelector('#editAccount').addEventListener('click', () =>{
     document.querySelector('.custom-modal').style.display = 'block';
-    console.log('zzzz');
     $("body").css('overflow','hidden');
 })
 document.querySelector('#closeModal').addEventListener('click', () =>{

@@ -91,7 +91,7 @@
                 <div class="messages"></div>
                 <div class="controls">
                     <input type="text" class="msg" placeholder="New message">
-                    <button class="sendMsg">Posalji</button>
+                    <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
                 </div>
             </section>
 
