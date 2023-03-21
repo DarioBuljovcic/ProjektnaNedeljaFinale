@@ -10,18 +10,18 @@ $(document).ready(()=>{
             }
         })
     }    
-    function loadPost(limit){
+    function loadPost(limits){
         $.ajax({
             type:'POST',
             url:'php/GetPosts.php',
             data:{
-                limit:limit
+                limit:limits
             },
             success: function(data){
                 $("#allPostsWrapper").html(data);
                 $(".loadMore").on('click',function(e) 
                 {
-                    let limits = $(".loadMore").attr("name");
+                    rowNum = $(".loadMore").attr("name");
                     loadPost(limits);
                     $("#form").trigger("reset");
                 });
@@ -66,7 +66,7 @@ $(document).ready(()=>{
                             },
                             success: function(data){
                                 if(data){
-                                    loadPost();
+                                    loadPost(rowNum);
                                     $("#form").trigger("reset");
                                 }
                             }
