@@ -224,9 +224,9 @@ document.querySelector('#logout').addEventListener('click', e =>{
     window.location.href = "index.php";
 })
 
-document.querySelector('#editAccount').addEventListener('click', () =>{
-    document.querySelector('.custom-modal').style.display = 'block'
-})
+document.querySelector('#editAccount').addEventListener('click', ()=>{
+    document.querySelector('.custom-modal').style.display = 'block';
+});
 document.querySelector('#closeModal').addEventListener('click', () =>{
     document.querySelector('.custom-modal').style.display = 'none'
 })
