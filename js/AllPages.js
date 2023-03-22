@@ -224,31 +224,12 @@ document.querySelector('#logout').addEventListener('click', e =>{
     window.location.href = "index.php";
 })
 
-document.querySelector('#editAccount').addEventListener('click', ()=>{
+document.querySelector('#editAccount').addEventListener('click', () =>{
     document.querySelector('.custom-modal').style.display = 'block';
-    document.querySelector('body').style.overflow = 'hidden';
 });
 document.querySelector('#closeModal').addEventListener('click', () =>{
-    document.querySelector('.custom-modal').style.display = 'none'
-})
-document.querySelector('#editForm').addEventListener('submit', e =>{
-    e.preventDefault()
-    let username=$("#korisnicko_ime").val();
-    let email=$("#edit_email").val();
-    let password=$("#edit_password").val();
-    if(isNaN(email) || isNaN(username)){ 
-        $.ajax({
-            type:'POST',
-            url:'php/EditUser.php',
-            data:{
-                username:username,
-                email:email,
-                password:password
-            },success:()=>{                   
-                window.location.href = "hexa.php";
-            }
-        })
-    }
+    document.querySelector('.custom-modal').style.display = 'none';
+    $("body").css('overflow','');
 })
 document.querySelector('#deleteProfile').addEventListener('click', e =>{
     e.preventDefault()
