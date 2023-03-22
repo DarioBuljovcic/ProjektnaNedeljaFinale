@@ -8,7 +8,7 @@
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){
             if($row['user_ids']=="|$id.$reciver|"){
-                $sql = "SELECT img FROM users WHERE Id= $id or Id=$reciver";
+                $sql = "SELECT img FROM users WHERE Id= $id";
                 $imgU = mysqli_query($conn,$sql);
                 $imgU = mysqli_fetch_assoc($imgU)['img'];
                 $sql = "SELECT img FROM users WHERE Id=$reciver";
