@@ -25,6 +25,7 @@ $(document).ready(()=>{
                     rowNum = $(".loadMore").attr("name");
                     loadPost(rowNum);
                     $("#form").trigger("reset");
+                    
                 });
 
                 $(".remove-btn").off();
