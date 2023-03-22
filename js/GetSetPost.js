@@ -24,6 +24,7 @@ $(document).ready(()=>{
                     let limits = $(".loadMore").attr("name");
                     loadPost(limits);
                     $("#form").trigger("reset");
+                    
                 });
 
                 $(".remove-btn").on('click',function(e) 
