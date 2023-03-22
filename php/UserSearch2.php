@@ -2,6 +2,7 @@
     include 'config.php';
     session_start();
     $username = $_POST['username'];
+    $id = $_SESSION['id'];
     $sql = "SELECT * FROM users WHERE username LIKE '%$username%' ORDER BY id DESC ";
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0):
