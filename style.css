@@ -104,16 +104,19 @@ form ul li{
     z-index: 1000;
 }
 .custom-modal button#closeModal{
-    height: 20px;
-    width: 20px;
     color: white;
     background-color: transparent;
     border: 0;
-    font-size: 25px;
+    font-size: 18px;
     /*font-weight: bold;*/
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 2px;
+    top: 14px;
+    transition: 0.4s;
+}
+.custom-modal button#closeModal:hover
+{
+    color: red;
 }
 .inner-container{
     border: 2px solid hsl(0, 0%, 18.82%);
@@ -627,14 +630,14 @@ form ul li{
 
 /* --------------------------------------*/
 
-/* .form {
+ .form {
     position: relative;
     width: 20rem;
     height: 3rem;
 }
 .form__input {
     position: absolute;
-    width: 100%;
+    width: 172%;
     height: 100%;
     border: 2px solid #ffffffa4;
     border-radius: 0.5rem;
@@ -664,17 +667,124 @@ form ul li{
     z-index: 90;
 }
 /* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
-/* .form__input:focus ~ .form__label, .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+.form__input:focus ~ .form__label, .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
     top: 0.4rem;
     font-size: 0.8rem;
     left: 0.8rem;
     padding: 0 0.5rem;
     color: #fff;
     z-index: 100;
-} */ 
+} 
 
 
 /*-------------------------------------- */
+
+/* --------------------------------------*/
+
+.form2 {
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    margin-top: 20px;
+}
+.form2__input {
+    position: absolute;
+    width: 172%;
+    height: 100%;
+    border: 2px solid #ffffffa4;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+    z-index: 100;
+}
+.form2__input:hover {
+    border-color: #ffffffd3;
+}
+.form2__input:focus {
+    border-color: #ffffff;
+
+}
+.form2__label {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.7rem;
+    padding: 0;
+    color: #ffffff93;
+    cursor: text;
+    transition: 250ms cubic-bezier(.79,0,.16,.99);
+    background-color: #181c2f;
+    z-index: 90;
+}
+/* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
+.form2__input:focus ~ .form2__label, .form2__input:not(:placeholder-shown).form2__input:not(:focus) ~ .form2__label {
+    top: 0.4rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    z-index: 100;
+} 
+
+
+/*-------------------------------------- */
+
+/* --------------------------------------*/
+
+.form3 {
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    margin-top: 20px;
+}
+.form3__input {
+    position: absolute;
+    width: 172%;
+    height: 100%;
+    border: 2px solid #ffffffa4;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+    z-index: 100;
+}
+.form3__input:hover {
+    border-color: #ffffffd3;
+}
+.form3__input:focus {
+    border-color: #ffffff;
+
+}
+.form3__label {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.7rem;
+    padding: 0;
+    color: #ffffff93;
+    cursor: text;
+    transition: 250ms cubic-bezier(.79,0,.16,.99);
+    background-color: #181c2f;
+    z-index: 90;
+}
+/* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
+.form3__input:focus ~ .form3__label, .form3__input:not(:placeholder-shown).form3__input:not(:focus) ~ .form3__label {
+    top: 0.4rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    z-index: 100;
+} 
+
+
+/*-------------------------------------- */
+
+
+
 
 
 footer{
@@ -847,7 +957,8 @@ footer{
 	z-index:10000;
 }
 .conversation {
-	background-color: #25293f;
+	/* background-color: #25293f; */
+    background-color: #181c2f;
 	position: fixed;
 	width: 500px;
 	height: 500px;
@@ -872,11 +983,13 @@ footer{
 .messages{
 	/* border:1px solid white; */
 	border-radius: 2px;
-	height: 350px;
-	margin-top: 30px;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	padding-inline:10px;
+    margin-top: 14px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-inline: 10px;
+    width: 108%;
+    margin-left: -17px;
+    height: 88%;
 }
 .messages .single-msg-R,
 .messages .single-msg-S{
@@ -885,14 +998,16 @@ footer{
 .controls{
 	position: absolute;
 	bottom: 10px;
-	left:2.5%;
+	left:0%;
 	padding-block: 10px;
 	padding-inline: 5px;
-	border:1px solid white;
 	border-radius: 5px;
-	width: 95%;
+	width: 100%;
 	display: flex;
 	gap:20px;
+    padding: 3px 20px;
+    border-top: 1px solid gray;
+    padding-top: 12px;
 }
 .controls button{
 	padding: 5px;
@@ -901,6 +1016,11 @@ footer{
 	color: white;
 	font-weight: 500;	
 	background-color: transparent;
+    margin-left: -22px;
+    padding: 5px 17px;
+    border-left: 1px solid #181c2f;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .controls input{
 	transition: all .2s;
@@ -911,6 +1031,11 @@ footer{
 	font-weight: 500;	
 	background-color: transparent;
 	width:100%;
+    border-right: 1px solid #181c2f;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 13px;
+    outline: none;
 }
 .single-msg{
     
@@ -946,7 +1071,7 @@ footer{
 }
 .msgText{
     text-align: center;
-    border-radius: 3px;
+    border-radius: 50px;
     padding-inline: 10px;
     padding-block: 5px;
     max-width: 50%;
@@ -972,4 +1097,36 @@ footer{
 .right-side{
     padding-bottom: 30px;
 }
-
+.closeConv
+{
+    color: white;
+    padding: 5px 10px;
+    transition: 0.3s;
+    border: 1px solid #6b6a6a;
+    border-radius: 100%;
+    font-size: 10px;
+    position: absolute;
+    top: -11px;
+    right: -10px;
+    background-color: #181c2f;
+}
+.closeConv:hover{
+    color: red;
+}
+#editForm h2{
+    font-weight: bold;
+}
+#footertekst{
+    position: absolute;
+    top: 6px;
+    left: 129px;
+    font-family: 'Dancing Script', cursive;
+}
+#footertekst span{
+    color: #424868;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

@@ -87,11 +87,11 @@
             </div>
                  
             <section class="conversation">
-                <button class="closeBtn closeConv">X</button>
+                <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
                 <div class="messages"></div>
                 <div class="controls">
-                    <input type="text" class="msg">
-                    <button class="sendMsg">Posalji</button>
+                    <input type="text" class="msg" placeholder="New message">
+                    <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
                 </div>
             </section>
 
@@ -120,32 +120,32 @@
     </div>
 
     <div class="custom-modal">
-        <button id="closeModal">X</button>
+        <button id="closeModal"><i class="fa-regular fa-x"></i></button>
         <form id="editForm">
             <h2>Izmenite korisnika</h2>
-                <div>
-                    <label for="korisnicko_ime">Korisnicko ime: *</label>
-                    <input type="text" id="korisnicko_ime" name="korisnicko_ime" placeholder="example123">
+                <div class="form">
+                    <input type="text" id="korisnicko_ime" name="korisnicko_ime" placeholder=" " autocomplete="off" class="form__input">
+                    <label for="korisnicko_ime" class="form__label">Username</label>
                 </div>
 
-                <div>
-                    <label for="edit_email">Email adresa: *</label>
-                    <input type="text" id="edit_email" name="register_email" placeholder="example@email.com">
+                <div class="form2">
+                    <input type="text" id="edit_email" name="register_email" placeholder=" " autocomplete="off" class="form2__input">
+                    <label for="edit_email" class="form2__label">Email</label>
                 </div>
-                <div>
-                    <label for="edit_password">Sifra: *</label>
-                    <input type="password" id="edit_password" name="sifra" placeholder="********">
+                <div class="form3">
+                    <input type="password" id="edit_password" name="sifra" placeholder=" "  autocomplete="off" class="form3__input">
+                    <label for="edit_password" class="form3__label">Password</label>
                 </div>
                 
 
                 <div>
-                    <button id="#SubmitEdit">Izmeni</button>
+                    <button id="#SubmitEdit" style="margin-top:20px;">Izmeni</button>
                 </div>
         </form>
         <form method="POST" action="hexa.php" autocomplete="off" enctype="multipart/form-data">
-                    <label for="edit_password">Izmeni Sliku</label>
+                    <label for="edit_password" style="margin-right:10px;">Izmeni Sliku</label>
                     <input type="file" id="select_img" name="select_img">
-                    <button type="submit" name="Image">Send files</button>
+                    <button type="submit" name="Image" style="margin-left:10px;">Sacuvaj</button>
         </form>
 
         <hr>
@@ -153,7 +153,7 @@
         <button id="deleteProfile">Obrisi profil</button>
     </div>
 
-    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/profile2.jpg" width="100%" class="navimg" id="imgsmall"alt="" srcset=""></footer>
+    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/profile2.jpg" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
 
     <script src="js/Session.js"></script>
     <script src="js/AllPages.js"></script> 

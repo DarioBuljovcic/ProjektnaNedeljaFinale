@@ -10,23 +10,25 @@ $(document).ready(()=>{
             }
         })
     }    
-    function loadPost(limit){
+    function loadPost(limits){
         $.ajax({
             type:'POST',
             url:'php/GetPosts.php',
             data:{
-                limit:limit
+                limit:limits
             },
             success: function(data){
                 $("#allPostsWrapper").html(data);
+                $(".loadMore").off();
                 $(".loadMore").on('click',function(e) 
                 {
-                    let limits = $(".loadMore").attr("name");
-                    loadPost(limits);
+                    rowNum = $(".loadMore").attr("name");
+                    loadPost(rowNum);
                     $("#form").trigger("reset");
                     
                 });
 
+                $(".remove-btn").off();
                 $(".remove-btn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -41,14 +43,14 @@ $(document).ready(()=>{
                         success: function(data){
                             if(data){
                                 
-                                loadPost();
+                                loadPost(rowNum);
                                 $("#form").trigger("reset");
                             }
                         }
                     })
                 });
             
-            
+                $("#postBtn").off();
                 $("#postBtn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -67,14 +69,15 @@ $(document).ready(()=>{
                             },
                             success: function(data){
                                 if(data){
-                                    loadPost();
+                                    loadPost(rowNum);
                                     $("#form").trigger("reset");
                                 }
                             }
                         })
                     }
                 });
-                
+
+                $(".like-btn").off()
                 $(".like-btn").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -108,7 +111,8 @@ $(document).ready(()=>{
                     }
                     
                 });
-            
+
+                $("#search-input").off()
                 $("#search-input").on('keyup',function(e) 
                 {
                     e.preventDefault();
@@ -126,6 +130,8 @@ $(document).ready(()=>{
                         }
                     })
                 });
+
+                $("#aa").off()
                 $("#aa").on('click',function(e) 
                 {
                     e.preventDefault();
@@ -143,7 +149,8 @@ $(document).ready(()=>{
                         }
                     })
                 });
-                
+
+                $(".postComment").off();
                 $(".postComment").on('click',function(e) 
                 {
                     console.log( "click")
@@ -162,6 +169,8 @@ $(document).ready(()=>{
                         }
                     })
                 });
+
+                $(".closeConv").off();
                 $(".closeConv").on('click',function(e) 
                 {
                     $("body").css('overflow','');

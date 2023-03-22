@@ -2,6 +2,7 @@
     include 'config.php';
     session_start();
     $username = $_POST['username'];
+    $id = $_SESSION['id'];
     $sql = "SELECT * FROM users WHERE username LIKE '%$username%' ORDER BY id DESC ";
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0):
@@ -13,6 +14,6 @@
     <img src="img/<?php echo $row['img']?>" alt="" srcset="" id="searchimg">
     <h4><?php echo $row['username']?></h4>
     <p><?php echo $row['email']?></p>
-    <i class="fa fa-paper-plane-o" style="position:absolute;right:20px;bottom:20px;"></i>
+    <i class="fa fa-paper-plane-o" style="position:absolute;right:20px;bottom:20px;font-size: 20px;top: 20px;"></i>
 </div>
 <?php endif;endwhile;endif;?>
