@@ -42,7 +42,7 @@ $(document).ready(()=>{
                         success: function(data){
                             if(data){
                                 
-                                loadPost();
+                                loadPost(rowNum);
                                 $("#form").trigger("reset");
                             }
                         }
