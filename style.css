@@ -946,6 +946,9 @@ footer{
     .right-side{
         margin-bottom: 61px;
     }
+    .conversation{
+        width: 100%;
+    }
   }
 .overlay{
 	width: 100vw;
