@@ -143,9 +143,9 @@
                 </div>
         </form>
         <form method="POST" action="hexa.php" autocomplete="off" enctype="multipart/form-data">
-                    <p for="edit_password" style="margin-right:10px;float: left;padding-top:8px;">Izmeni Sliku</p>
+                    <p for="edit_password" style="margin-right:10px;float: left;padding-top:8px;" id="tekstzasliku">Izmeni Sliku</p>
                     <input type="file" id="select_img" name="select_img">
-                    <button type="submit" name="Image" style="margin-left:10px;">Sacuvaj</button>
+                    <button type="submit" name="Image" id="sacuvajsliku">Sacuvaj</button>
         </form>
 
         <hr>

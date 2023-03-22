@@ -230,7 +230,7 @@ document.querySelector('#editAccount').addEventListener('click', () =>{
 });
 document.querySelector('#closeModal').addEventListener('click', () =>{
     document.querySelector('.custom-modal').style.display = 'none';
-    $("body").css('overflow','');
+    $("body").css('overflow','visible');
 })
 document.querySelector('#deleteProfile').addEventListener('click', e =>{
     e.preventDefault()
