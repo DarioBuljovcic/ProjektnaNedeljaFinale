@@ -104,16 +104,19 @@ form ul li{
     z-index: 1000;
 }
 .custom-modal button#closeModal{
-    height: 20px;
-    width: 20px;
     color: white;
     background-color: transparent;
     border: 0;
-    font-size: 25px;
+    font-size: 18px;
     /*font-weight: bold;*/
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 2px;
+    top: 14px;
+    transition: 0.4s;
+}
+.custom-modal button#closeModal:hover
+{
+    color: red;
 }
 .inner-container{
     border: 2px solid hsl(0, 0%, 18.82%);
@@ -308,9 +311,10 @@ form ul li{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     transition: 0.3s;
+    border-left: 1px solid #181c2f;
 }
 .navsearch button:hover{
-    background-color: hsl(0, 0%, 26%);
+    color: hsl(0, 0%, 51%);
 }
 .navsearch input{
     background-color: transparent;
@@ -323,6 +327,7 @@ form ul li{
     padding-top: 5px;
     padding-bottom: 5px;
     width: 20%;
+    border-right: 1px solid #181c2f;
 }
 
 #userneki{
@@ -563,6 +568,9 @@ form ul li{
   .popup-prof #logout2{
     padding: 5px 32px;
   }
+  .popup-prof #logout{
+    width: 49.1%;
+  }
   .popup-prof p
   {
     margin-top: 5px;
@@ -627,14 +635,14 @@ form ul li{
 
 /* --------------------------------------*/
 
-/* .form {
+ .form {
     position: relative;
     width: 20rem;
     height: 3rem;
 }
 .form__input {
     position: absolute;
-    width: 100%;
+    width: 172%;
     height: 100%;
     border: 2px solid #ffffffa4;
     border-radius: 0.5rem;
@@ -664,17 +672,124 @@ form ul li{
     z-index: 90;
 }
 /* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
-/* .form__input:focus ~ .form__label, .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+.form__input:focus ~ .form__label, .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
     top: 0.4rem;
     font-size: 0.8rem;
     left: 0.8rem;
     padding: 0 0.5rem;
     color: #fff;
     z-index: 100;
-} */ 
+} 
 
 
 /*-------------------------------------- */
+
+/* --------------------------------------*/
+
+.form2 {
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    margin-top: 20px;
+}
+.form2__input {
+    position: absolute;
+    width: 172%;
+    height: 100%;
+    border: 2px solid #ffffffa4;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+    z-index: 100;
+}
+.form2__input:hover {
+    border-color: #ffffffd3;
+}
+.form2__input:focus {
+    border-color: #ffffff;
+
+}
+.form2__label {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.7rem;
+    padding: 0;
+    color: #ffffff93;
+    cursor: text;
+    transition: 250ms cubic-bezier(.79,0,.16,.99);
+    background-color: #181c2f;
+    z-index: 90;
+}
+/* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
+.form2__input:focus ~ .form2__label, .form2__input:not(:placeholder-shown).form2__input:not(:focus) ~ .form2__label {
+    top: 0.4rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    z-index: 100;
+} 
+
+
+/*-------------------------------------- */
+
+/* --------------------------------------*/
+
+.form3 {
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    margin-top: 20px;
+}
+.form3__input {
+    position: absolute;
+    width: 172%;
+    height: 100%;
+    border: 2px solid #ffffffa4;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+    z-index: 100;
+}
+.form3__input:hover {
+    border-color: #ffffffd3;
+}
+.form3__input:focus {
+    border-color: #ffffff;
+
+}
+.form3__label {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.7rem;
+    padding: 0;
+    color: #ffffff93;
+    cursor: text;
+    transition: 250ms cubic-bezier(.79,0,.16,.99);
+    background-color: #181c2f;
+    z-index: 90;
+}
+/* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
+.form3__input:focus ~ .form3__label, .form3__input:not(:placeholder-shown).form3__input:not(:focus) ~ .form3__label {
+    top: 0.4rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    z-index: 100;
+} 
+
+
+/*-------------------------------------- */
+
+
+
 
 
 footer{
@@ -684,159 +799,9 @@ footer{
     margin-bottom: 0px;
     font-family: sans-serif;
 }
-
-  @media only screen and (max-width: 425px)
-  {
-    /*Projektna nedelja tekst*/
-    .navsearch h2{
-       display: none;
-    }
-    .navsearch input {
-        width: 80%;
-    }
-    .navsearch .divimg img
-    {
-        width: 400%;
-        
-    }
-    #userneki{
-        left: 6%;
-    }
-    .container{
-        width: 100%;
-        
-    }
-    .inner-container img.profile{
-        width: 20%;
-        float: left;
-        margin-right: 30px;
-    }
-    .left-side p
-    {
-      margin-top: 5px;
-    }
-    .left-side{
-        margin-bottom: 20px;
-        border-radius: 15px;
-    }
-    #postForm button{
-        width: 30%;
-    }
-    #postForm{
-        height: 100px;
-    }
-    .right-side{
-        border-top-right-radius: 15px;
-        border-top-left-radius: 15px;
-    }
-    #posttimg{
-        width: 15%;
-    }
-    .post-actions p{
-        width:220px;
-    }
-    .left-side img{
-        width: 13%;
-    }
-    .left-side #goldstar
-    {
-        left: 170px;
-    }
-    .left-side #brlajkova{
-        left: 180px;
-    }
-    .popup-prof
-    {
-        left: 0px;
-        width: 100%;
-        position: fixed;
-        transform: translateY(100svh);
-        border: none;
-        border: 2px solid hsl(0, 0%, 18.82%);
-        height: 800px;
-    }
-      .popup-prof a .profile{
-        width: 25%;
-        margin-right: 20px;
-    }
-    .popup-prof #username{
-        padding-left: -40px;
-    }
-    footer{
-        display: block;
-        background-color: #181c2f;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 50px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-top: 1px solid gray;
-        z-index: 100;
-    } 
-    #imgsmall{
-        width: 8%;
-        border: 1px solid gray;
-        border-radius: 100%;
-        margin-left: 86%;
-        margin-top:7.2px;
-    }
-    .divimg{
-        display: none;
-    }
-    #footstar
-    {
-        position: absolute;
-        top: 14px;
-        left: 22px;
-        font-size: 18px;
-    }
-    .left-wrapper
-    {
-        left: 0px;
-        width: 100%;
-        position: fixed;
-        transform: translateY(100svh);
-        border: none;
-        z-index: 100;
-        transition: all .2s;
-    }
-    .left-wrapper .left-side{
-        height: 800px;
-        transition: all .2s;
-        transform: translateY(100svh);
-    }
-    .popup-prof #editAccount
-    {
-        position: absolute;
-        top: 130px;
-        left: 20px;
-        width: 44%;
-        border-radius: 10px;
-    }
-    .popup-prof #logout{
-        position: absolute;
-        top: 130px;
-        right: 20px;
-        width: 44%;
-        border-radius: 10px;
-    }
-    .popup-prof #username{
-        position: absolute;
-        top: 35px;
-        font-size: 20px;
-    }
-    .popup-prof #email{
-        position: absolute;
-        top: 65px;
-        left: 131px;
-        color: #6b6a6a;
-    }
-    .right-side{
-        margin-bottom: 61px;
-    }
-  }
+.custom-modal #sacuvajsliku{
+    margin-left: 10px;
+}
 .overlay{
 	width: 100vw;
 	height: 100vh;
@@ -885,7 +850,6 @@ footer{
 .messages .single-msg-S{
 	margin-top:10px;
 }
-
 .controls{
 	position: absolute;
 	bottom: 10px;
@@ -962,7 +926,7 @@ footer{
 }
 .msgText{
     text-align: center;
-    border-radius: 3px;
+    border-radius: 50px;
     padding-inline: 10px;
     padding-block: 5px;
     max-width: 50%;
@@ -1001,3 +965,222 @@ footer{
     right: -10px;
     background-color: #181c2f;
 }
+.closeConv:hover{
+    color: red;
+}
+#editForm h2{
+    font-weight: bold;
+}
+#footertekst{
+    position: absolute;
+    top: 6px;
+    left: 129px;
+    font-family: 'Dancing Script', cursive;
+}
+#footertekst span{
+    color: #424868;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+  @media only screen and (max-width: 425px)
+  {
+    /*Projektna nedelja tekst*/
+    .navsearch h2{
+       display: none;
+    }
+    .navsearch input {
+        width: 90%;
+        border-radius: 15px;
+    }
+    .navsearch .divimg img
+    {
+        width: 400%;
+        
+    }
+    #userneki{
+        left: 0%;
+        width: 100%;
+        border-radius: 0px;
+        border-right: 1px solid #181c2f;
+        border-left: 1px solid #181c2f;
+    }
+    .container{
+        width: 100%;       
+    }
+    .inner-container img.profile{
+        width: 20%;
+        float: left;
+        margin-right: 30px;
+    }
+    .left-side p
+    {
+      margin-top: 5px;
+    }
+    .left-side{
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    #postForm button{
+        width: 30%;
+    }
+    #postForm{
+        height: 100px;
+    }
+    .right-side{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    #posttimg{
+        width: 15%;
+    }
+    .post-actions p{
+        width:220px;
+    }
+    .left-side img{
+        width: 13%;
+    }
+    .left-side #goldstar
+    {
+        left: 170px;
+    }
+    .left-side #brlajkova{
+        left: 180px;
+    }
+    .popup-prof
+    {
+        left: 0px;
+        width: 100%;
+        position: fixed;
+        transform: translateY(100svh);
+        border: none;
+        border: 2px solid hsl(0, 0%, 18.82%);
+        height: 721px;
+        top: 24px;
+    }
+      .popup-prof a .profile{
+        width: 25%;
+        margin-right: 20px;
+    }
+    .popup-prof #username{
+        padding-left: -40px;
+    }
+    footer{
+        display: block;
+        background-color: #181c2f;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top: 1px solid gray;
+        z-index: 100;
+    } 
+    #imgsmall{
+        width: 8%;
+        border: 1px solid gray;
+        border-radius: 100%;
+        margin-left: 86%;
+        margin-top:7.2px;
+    }
+    .divimg{
+        display: none;
+    }
+    #footstar
+    {
+        position: absolute;
+        top: 14px;
+        left: 22px;
+        font-size: 18px;
+    }
+    .left-wrapper
+    {
+        left: 0px;
+        width: 100%;
+        position: fixed;
+        transform: translateY(100svh);
+        border: none;
+        z-index: 100;
+        transition: all .2s;
+    }
+    .left-wrapper .left-side{
+        transition: all .2s;
+        transform: translateY(100svh);
+        height: 720px;
+        top: -19px;
+        border-radius: 0px;
+    }
+    .popup-prof #editAccount
+    {
+        position: absolute;
+        top: 130px;
+        left: 20px;
+        width: 44%;
+        border-radius: 10px;
+    }
+    .popup-prof #logout{
+        position: absolute;
+        top: 130px;
+        right: 20px;
+        width: 44%;
+        border-radius: 10px;
+        
+    }
+    .popup-prof #username{
+        position: absolute;
+        top: 35px;
+        font-size: 20px;
+    }
+    .popup-prof #email{
+        position: absolute;
+        top: 65px;
+        left: 131px;
+        color: #6b6a6a;
+    }
+    .right-side{
+        margin-bottom: 61px;
+    }
+    .conversation{
+       width: 100%;
+       height: 100%;
+    }
+    .messages{
+        margin-left: -28px;
+        width: 113%;
+        height: 93%;
+        margin-top: 17px;
+    }
+    .closeConv{
+        top: 4px;
+        right: 4px;
+        border: 1px solid #181c2f;
+        font-size: 15px;
+    }
+    .custom-modal{
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        top: 0;
+    }
+    .custom-modal input{
+        width: 100%;
+    }
+    .custom-modal #sacuvajsliku{
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .custom-modal #select_img{
+        margin-top: 0px;
+    }
+    .custom-modal #tekstzasliku{
+        margin-bottom: 5px;
+    }
+    .navsearch button{
+        display: none;
+    }
+  }
