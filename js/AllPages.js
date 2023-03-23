@@ -116,17 +116,17 @@ document.addEventListener("click", function(event) {
   let popuptopfive2=document.querySelector('.left-wrapper');
   let body = document.querySelector('body');
   let zvezda=document.querySelector("#footstar");
+let test = !popuptopfive2.contains(event.target) && !popuptopfive.contains(event.target) && !zvezda.contains(event.target);
+    if(!popuptopfive2.contains(event.target) && !popuptopfive.contains(event.target) && !zvezda.contains(event.target))
+    {
+        popuptopfive.style.transform='translateY(100svh)';
+        popuptopfive.style.opacity="0";
+        if(document.querySelector('footer').contains(event.target) && !test)
+            body.style.overflow='visible'; 
 
-  if(!popuptopfive2.contains(event.target) && !popuptopfive.contains(event.target) && !zvezda.contains(event.target))
-  {
-    popuptopfive.style.transform='translateY(100svh)';
-    popuptopfive.style.opacity="0";
-    if(document.querySelector('footer').contains(event.target))
-        body.style.overflow='visible'; 
-
-    popuptopfive2.style.transform='translateY(100svh)';
-    popuptopfive2.style.opacity="0";
-  }
+        popuptopfive2.style.transform='translateY(100svh)';
+        popuptopfive2.style.opacity="0";
+    }
   }
 //   else if(!popupUserImg2.contains(event.target) && !popupUser.contains(event.target))
 //   {
