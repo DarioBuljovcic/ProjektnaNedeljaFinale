@@ -154,7 +154,7 @@
         <button id="deleteProfile">Obrisi profil</button>
     </div>
 
-    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/profile2.jpg" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
+    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
 
     <script src="js/Session.js"></script>
     <script src="js/AllPages.js"></script> 
