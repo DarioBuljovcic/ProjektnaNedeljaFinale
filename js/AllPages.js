@@ -121,7 +121,7 @@ document.addEventListener("click", function(event) {
   {
     popuptopfive.style.transform='translateY(100svh)';
     popuptopfive.style.opacity="0";
-    if(!document.querySelector('#imgsmall').contains(event.target))
+    if(document.querySelector('footer').contains(event.target))
         body.style.overflow='visible'; 
 
     popuptopfive2.style.transform='translateY(100svh)';

@@ -7,13 +7,15 @@
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
     $id = $_SESSION['id'];
-    
-
-    if(isset($_POST["Image"]))
+    $imgSql = "SELECT img FROM users WHERE Id=$id";
+    $img = mysqli_query($conn,$imgSql);
+    $img = mysqli_fetch_assoc($img)['img'];
+    if(isset($_POST["Image"]) )
     {     
         if($_FILES["select_img"]["error"]===4){
             echo "<script>alert('Image does not exist!!')</script>";
         }else {
+            unlink("./img/$img");
             $fileName = $_FILES["select_img"]["name"];
             $fileSize = $_FILES["select_img"]["size"];
             $tmpName = $_FILES["select_img"]["tmp_name"];
@@ -32,12 +34,11 @@
                 move_uploaded_file($tmpName,'img/'.$newImageName);
                 $sql = "UPDATE users SET img='$newImageName' WHERE Id=$id";
                 mysqli_query($conn,$sql);
+                header('Location: ./hexa.php');
             }
         }
     }
-    $imgSql = "SELECT img FROM users WHERE Id=$id";
-    $img = mysqli_query($conn,$imgSql);
-    $img = mysqli_fetch_assoc($img)['img'];
+    
 ?>
 
 
@@ -153,7 +154,7 @@
         <button id="deleteProfile">Obrisi profil</button>
     </div>
 
-    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/profile2.jpg" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
+    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
 
     <script src="js/Session.js"></script>
     <script src="js/AllPages.js"></script> 
