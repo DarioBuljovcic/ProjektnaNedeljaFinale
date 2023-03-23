@@ -15,7 +15,8 @@
         if($_FILES["select_img"]["error"]===4){
             echo "<script>alert('Image does not exist!!')</script>";
         }else {
-            unlink("./img/$img");
+            if($img!="profile.jpg")
+                unlink("./img/$img");
             $fileName = $_FILES["select_img"]["name"];
             $fileSize = $_FILES["select_img"]["size"];
             $tmpName = $_FILES["select_img"]["tmp_name"];
