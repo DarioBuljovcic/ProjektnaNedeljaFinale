@@ -7,16 +7,14 @@
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
     $id = $_SESSION['id'];
-    
-
-    if(isset($_POST["Image"]))
+    $imgSql = "SELECT img FROM users WHERE Id=$id";
+    $img = mysqli_query($conn,$imgSql);
+    $img = mysqli_fetch_assoc($img)['img'];
+    if(isset($_POST["Image"]) )
     {     
         if($_FILES["select_img"]["error"]===4){
             echo "<script>alert('Image does not exist!!')</script>";
         }else {
-            $sql = "SELECT img FROM users where Id=$id";    
-            $result = mysqli_query($conn,$sql);
-            $img = mysqli_fetch_assoc($result)['img'];
             unlink("./img/$img");
             $fileName = $_FILES["select_img"]["name"];
             $fileSize = $_FILES["select_img"]["size"];
@@ -36,12 +34,11 @@
                 move_uploaded_file($tmpName,'img/'.$newImageName);
                 $sql = "UPDATE users SET img='$newImageName' WHERE Id=$id";
                 mysqli_query($conn,$sql);
+                header('Location: ./hexa.php');
             }
         }
     }
-    $imgSql = "SELECT img FROM users WHERE Id=$id";
-    $img = mysqli_query($conn,$imgSql);
-    $img = mysqli_fetch_assoc($img)['img'];
+    
 ?>
 
 
