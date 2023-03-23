@@ -14,6 +14,10 @@
         if($_FILES["select_img"]["error"]===4){
             echo "<script>alert('Image does not exist!!')</script>";
         }else {
+            $sql = "SELECT img FROM users where Id=$id";    
+            $result = mysqli_query($conn,$sql);
+            $img = mysqli_fetch_assoc($result)['img'];
+            unlink("./img/$img");
             $fileName = $_FILES["select_img"]["name"];
             $fileSize = $_FILES["select_img"]["size"];
             $tmpName = $_FILES["select_img"]["tmp_name"];
