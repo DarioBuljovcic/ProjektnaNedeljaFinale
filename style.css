@@ -993,9 +993,7 @@ footer a{
        display: none;
     }
     .navsearch input {
-        width: 90%;
-        border-radius: 15px;
-        border-right: 1px solid hsl(0, 0%, 26%);
+        width: 80%;
     }
     .navsearch .divimg img
     {
@@ -1191,8 +1189,5 @@ footer a{
     }
     .custom-modal #tekstzasliku{
         margin-bottom: 5px;
-    }
-    .navsearch button{
-        display: none;
     }
   }
