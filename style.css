@@ -311,9 +311,10 @@ form ul li{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     transition: 0.3s;
+    border-left: 1px solid #181c2f;
 }
 .navsearch button:hover{
-    background-color: hsl(0, 0%, 26%);
+    color: hsl(0, 0%, 51%);
 }
 .navsearch input{
     background-color: transparent;
@@ -326,6 +327,7 @@ form ul li{
     padding-top: 5px;
     padding-bottom: 5px;
     width: 20%;
+    border-right: 1px solid #181c2f;
 }
 
 #userneki{
