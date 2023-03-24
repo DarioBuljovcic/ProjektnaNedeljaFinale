@@ -824,6 +824,7 @@ footer{
 	inset:0; 
 	margin: auto; 
 	transition: transform .2s ease;
+    border-radius: 10px;
 }
 .closeBtn{
 	font-size: 25px;
