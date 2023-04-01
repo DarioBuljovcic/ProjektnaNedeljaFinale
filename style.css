@@ -288,6 +288,7 @@ form ul li{
     border: 1px solid hsl(0, 0%, 39%);
     padding: 10px;
     margin-top: 20px;
+    border-radius: 10px;
 }
 .navsearch{
   background-color: #181c2f;
@@ -494,6 +495,7 @@ form ul li{
   }
   .post-actions p{
     width: 60%;
+    font-weight: bold;
   }
 .divimg{
     position: absolute;
@@ -621,17 +623,22 @@ form ul li{
   
 }
 .left-side #goldstar{
-  color: rgba(255, 217, 0, 0.904) !important;
+  color: #424868 !important;
   position: relative;
-  left: 90px;
+  left: 120px;
   top:  0px;
 }
 .left-side #brlajkova{
     position: relative;
-    left: 100px;
+    left: 130px;
     top:  1px;  
 }
-
+.sendMsg{
+    transition: .3s;
+}
+.sendMsg:hover{
+    color: gray;
+}
 
 /* --------------------------------------*/
 
@@ -950,6 +957,9 @@ footer{
     position: absolute;
     right: 38%;
 }
+.loadMore:hover{
+    background-color: #424868;
+}
 .right-side{
     padding-bottom: 30px;
 }
@@ -1052,10 +1062,10 @@ img{
     }
     .left-side #goldstar
     {
-        left: 170px;
+        left: 230px;
     }
     .left-side #brlajkova{
-        left: 180px;
+        left: 240px;
     }
     .popup-prof
     {

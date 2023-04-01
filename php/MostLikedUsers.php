@@ -18,6 +18,6 @@
 <div class="top5Users">
     <img src="img/<?php echo $img['img']?>" alt="">
     <span id="userTop"><?php echo $row['username']?></span>
-    <i class="fa-solid fa-star" id="goldstar"></i><span id="brlajkova"><?php echo $row['likes']?></span>
+    <i class="fa-solid fa-ranking-star" id="goldstar"></i><span id="brlajkova"><?php echo $row['likes']?></span>
 </div> 
 <?php endwhile; endif;?>

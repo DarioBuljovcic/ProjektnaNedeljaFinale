@@ -18,7 +18,7 @@
 
 <div class='single-msg-S .single-msg' name="<?php echo $row['id']?>">
     
-    <div class="msgText" style="background-color: rgb(174, 133, 232);">  <?php echo $row['messages']?> </div>
+    <div class="msgText" style="background-color: #424868;">  <?php echo $row['messages']?> </div>
     <img src="img/<?php echo $imgU?>" alt="img of the user" class="msgImg">
 
 </div>
@@ -28,7 +28,7 @@
     
 <div class='single-msg-R .single-msg' name="<?php echo $row['id']?>">
     <img src="img/<?php echo $imgR?>" alt="img of the user" class="msgImg">
-    <div class="msgText" style="background-color: rgb(101, 187, 253);">  <?php echo $row['messages']?> </div>   
+    <div class="msgText" style="background-color: rgba(101, 187, 253, 0.373);">  <?php echo $row['messages']?> </div>   
 </div>
 
 <?php } ?>
