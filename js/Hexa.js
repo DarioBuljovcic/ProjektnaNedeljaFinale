@@ -13,8 +13,12 @@ $(document).ready(()=>{
     function userPage(){
         $('.singleitemsearchh').off();
         $('.singleitemsearchh').click( e =>{
-                e.preventDefault()
-                window.location.href = "./userpage.html";
+                //e.preventDefault();
+                let id=$(e.currentTarget).attr('name');
+                let user = $(e.currentTarget).find("h4").text();
+                let email = $(e.currentTarget).find("p").text();
+                window.location.href=`./userpage.php?id=${window.btoa(id)}&username=${window.btoa(user)}&email=${window.btoa(email)}`;
+
         });
     }
     function loadPost(limits){

@@ -1,3 +1,14 @@
+<?php 
+    include 'php/config.php';
+    session_start();
+    $username = base64_decode($_GET['username']);
+    $email = base64_decode($_GET['email']);
+    $id = base64_decode($_GET['id']);
+    $imgSql = "SELECT img FROM users WHERE Id=$id";
+    $img = mysqli_query($conn,$imgSql);
+    $img = mysqli_fetch_assoc($img)['img'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +19,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" 
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
+            crossorigin="anonymous">
+    </script>
+    <script src="js/UserPage.js"></script>
     <title>User</title>
 </head>
 <body>
@@ -30,8 +46,8 @@
                     <div class="inner-container left-side">
                         <img src="img/<?php echo $img?>" alt="" class="profile">
                 
-                        <p><b id="username"><?php echo $img?></b></p>
-                        <p id="email"><?php echo $img?></p>
+                        <p><b id="username" name="<?php echo $id?>"><?php echo $username?></b></p>
+                        <p id="email"><?php echo $email?></p>
                 
                     </div>
             </div>
@@ -47,11 +63,6 @@
 
 
     <script src="js/Session.js"></script>    
-    <script src="js/User.js"></script>
-    <script src="js/UserSearch.js"></script>
-    <script src="js/Comment.js"></script>
-    <script src="js/Post.js"></script>
-    <script src="js/userpage.js"></script>
     <script src="js/AllPages.js"></script>
 </body>
 </html>

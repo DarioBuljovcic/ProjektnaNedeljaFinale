@@ -58,7 +58,7 @@
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
             crossorigin="anonymous">
     </script>    
-    <script src="js/GetSetPost.js" ></script>
+    <script src="js/Hexa.js" ></script>
 </head>
 <body>
     <div class="overlay"></div>

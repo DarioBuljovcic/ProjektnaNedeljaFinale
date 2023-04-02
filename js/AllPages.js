@@ -242,13 +242,6 @@ document.querySelector('#deleteProfile').addEventListener('click', e =>{
         user.delete()
     }
 });
-document.querySelectorAll('.singleitemsearchh').forEach(e => {
-    e.addEventListener('click', e =>{
-        e.preventDefault()
-    
-        window.location.href = "./userpage.html";
-    });
-})
 
 
 
