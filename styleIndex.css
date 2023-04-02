@@ -36,17 +36,15 @@ h2{
 .main-wrapper{
     max-width: 550px;
     margin: auto;
-    background-color: rgba(15, 15, 15);
+    background-color: black;
     border-radius: 1vw;
-    backdrop-filter: blur(20px);
-    mix-blend-mode:lighten;
     padding: 50px;
-    border:1px solid white;
 }
 .loginForm{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: -50px;
 }
 form div{
     padding: 15px 0;
@@ -73,6 +71,9 @@ form div input {
     border-radius: .8vw;
     color:white;
     transition: all .1s;
+}
+.main-wrapper input{
+    border-radius: 20px;
 }
 form div input::placeholder{
     color:rgb(249, 249, 249,.8);
@@ -111,17 +112,29 @@ form ul li{
     margin-bottom: -30px;
 }
 .no-acc-register button{
-    padding: 15px;
+    padding: 10px 10px;
     font-size: 18px;
     cursor: pointer;
+    margin-top: -28px;
+    width:452px;
+    border-radius: 20px;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+.no-acc-register button:hover{
+    color: black;
+    background-color: white;
 }
 .no-acc-register p{
-    font-size: 22px;
-    margin-bottom: 15px;
+    font-size: 19px;
+    margin-bottom: 25px;
+    color: gray;
 }
 body .registerContainer
 {
     display:none;
+    margin-bottom: -50px;
 }
 button#closeModal{
     height: 20px;
@@ -245,9 +258,20 @@ h2
 button{
     transition: .3s;
 }
-button:hover{
-    background-color: #282f3d;
+.main-wrapper button:hover{
+    background-color: black;
+    color: white;
 }
+.main-wrapper button{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    font-weight: bold;
+    padding: 10px 10px;
+    margin-bottom: -74px;
+    color: black;
+}
+
 #ulg{
    margin-bottom: 12px;
    color: grey;
@@ -262,6 +286,19 @@ button:hover{
     color: grey;
     text-align: center;
 }
+#login_lozinka{
+    margin-bottom: 16px;
+}
+#loginForm input{
+    padding-left: 20px;
+}
+
+#registrationForm input{
+    padding-left: 20px;
+}
+
+
+
 @media only screen and (max-width: 425px)
 {
     #naslovind{
@@ -288,12 +325,9 @@ button:hover{
         border-radius: 20px;
         padding:10px 40px;
         width: 100%;
-        margin-bottom: -30px;
+        margin-bottom: -15px;
     }
     .main-wrapper label{
-        display: none;
-    }
-    .no-acc-register p{
         display: none;
     }
     .no-acc-register button{

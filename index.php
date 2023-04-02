@@ -79,12 +79,12 @@
             <p id="ulg">Uloguj se u svoj nalog</p>
 
             <div>
-                <label>Email:</label> 
+                <!-- <label>Email:</label>  -->
                 <input type="email" name="email" id="login_email" placeholder="Email adress">
             </div>
 
             <div>
-                <label>Lozinka:</label>
+                <!-- <label>Lozinka:</label> -->
                 <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
             </div>
             
@@ -95,25 +95,26 @@
     </div>
     <div class="main-wrapper registerContainer">
         <form id="registrationForm" method="POST" action="index.php">
-            <h2>Registracija korisnika</h2>
+            <h2 id="reghd">Registracija korisnika</h2>
+            <p id="ulg" style="margin-top: -29px;margin-bottom: 13px;">Kreiraj novi nalog</p>
             <div>
-                <label for="korisnicko_ime">Korisnicko ime: *</label>
-                <input type="text" id="korisnicko_ime" name="username" placeholder="example123">
+                <!-- <label for="korisnicko_ime">Korisnicko ime: *</label> -->
+                <input type="text" id="korisnicko_ime" name="username" placeholder="Username">
             </div>
 
             <div>
-                <label for="email">Email adresa: *</label>
-                <input type="text" id="email" name="email" placeholder="example@email.com">
+                <!-- <label for="email">Email adresa: *</label> -->
+                <input type="text" id="email" name="email" placeholder="Email adress">
             </div>
 
             <div>
-                <label for="lozinka">Lozinka: *</label>
-                <input type="password" id="lozinka" name="password" placeholder="******">
+                <!-- <label for="lozinka">Lozinka: *</label> -->
+                <input type="password" id="lozinka" name="password" placeholder="Password">
             </div>
 
             <div>
-                <label for="ponovi_lozinku">Ponovi lozinku: *</label>
-                <input type="password" id="password2" name="password2" placeholder="******">
+                <!-- <label for="ponovi_lozinku">Ponovi lozinku: *</label> -->
+                <input type="password" id="password2" name="password2" placeholder="Confirm password">
             </div>
 
             <div>
@@ -122,7 +123,7 @@
         </form>
     </div> 
     <div class="no-acc-register">
-        <p>Nemas nalog?</p>
+         <p>or</p>
         <button id="registracija">Registruj se</button>
     </div>
     
