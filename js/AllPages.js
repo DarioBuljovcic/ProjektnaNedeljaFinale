@@ -241,7 +241,12 @@ document.querySelector('#deleteProfile').addEventListener('click', e =>{
         let user = new User()
         user.delete()
     }
-})
+});
+document.querySelector('singleitemsearchh').addEventListener('click', e =>{
+    e.preventDefault()
+
+    window.location.href = "./userpage.html";
+});
 
 
 
