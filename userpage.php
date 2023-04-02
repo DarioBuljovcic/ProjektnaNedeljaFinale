@@ -28,10 +28,10 @@
         <div class="row">
             <div class="col-md-3">
                     <div class="inner-container left-side">
-                        <img src="img/profile2.jpg" alt="" class="profile">
+                        <img src="img/<?php echo $img?>" alt="" class="profile">
                 
-                        <p><b id="username"></b></p>
-                        <p id="email"></p>
+                        <p><b id="username"><?php echo $img?></b></p>
+                        <p id="email"><?php echo $img?></p>
                 
                     </div>
             </div>

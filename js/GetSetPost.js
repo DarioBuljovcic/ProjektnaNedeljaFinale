@@ -10,6 +10,13 @@ $(document).ready(()=>{
             }
         })
     }    
+    function userPage(){
+        $('.singleitemsearchh').off();
+        $('.singleitemsearchh').click( e =>{
+                e.preventDefault()
+                window.location.href = "./userpage.html";
+        });
+    }
     function loadPost(limits){
         $.ajax({
             type:'POST',
@@ -126,6 +133,7 @@ $(document).ready(()=>{
                         },
                         success: function(data){
                             $("#userneki").html(data);
+                            userPage();
                             msgScreen();
                         }
                     })
@@ -145,6 +153,7 @@ $(document).ready(()=>{
                         },
                         success: function(data){
                             $("#userneki").html(data);
+                            userPage();
                             msgScreen();
                         }
                     })
@@ -153,7 +162,6 @@ $(document).ready(()=>{
                 $(".postComment").off();
                 $(".postComment").on('click',function(e) 
                 {
-                    console.log( "click")
                     e.preventDefault();
                     let comment = $(e.target).closest('.single-post').find(".commentValue").val();
                     let post_id = $(e.target).closest('.single-post').attr("name");
@@ -208,6 +216,7 @@ $(document).ready(()=>{
             $("body").css('overflow','hidden');
             $(".overlay").css('transform','scale(1)');
             $(".conversation").css('transform','ScaleY(1)');
+
             //funkcija za refreshovanje poruka
             interval=setInterval(() => {
                 showMsgs();
