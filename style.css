@@ -163,7 +163,7 @@ form ul li{
 }
 #allPostsWrapper .single-post .post-content {
     padding-bottom: 10px;
-    border-bottom: 1px solid white ;
+    border-bottom: 1px solid #6b6a6a ;
     margin-bottom: 10px;
     font-size: 22px;
     word-break: break-all;
@@ -382,6 +382,9 @@ form ul li{
 .singleitemsearchh:hover{
     background-color: #2b304823;
 }
+.singleitemsearchh i:hover{
+    color: gray;
+}
 ::-webkit-scrollbar {
     width: 12px;
   }
@@ -469,6 +472,9 @@ form ul li{
     left: 60px;
     cursor: pointer;
   }
+  .navsearch span{
+    color: #424868;
+  }
   .navsearch a{
     text-decoration: none;
     color: white;
@@ -485,9 +491,7 @@ form ul li{
     position: relative;
     word-break:break-all;
   }
-  .navsearch span{
-    color: #424868;
-  }
+
   #posttimg{
     border-radius: 100%;
     margin-right: 4px;
@@ -548,12 +552,12 @@ form ul li{
    opacity: 0;
 }
 
-.popup-prof #email2{
+.popup-prof #email{
     color: #6b6a6a;
-    margin-top: -10px;
+    margin-top: -15px;
     margin-bottom: 20px;
   }
-  .popup-prof #username2{
+  .popup-prof #username{
       font-size: 20px;
   }
   .popup-prof button{
@@ -589,6 +593,7 @@ form ul li{
     margin: 10px 0px;
     margin-right: 17px;
     border-radius: 100%;
+    border: 1px solid gray;
 }
 .top5Users{
     position:relative;
@@ -602,6 +607,7 @@ form ul li{
     overflow:hidden;
     text-overflow:ellipsis;
     inset: 20px 20%;
+    margin-left: 5px;
 }
 #brLajkova{
     position: absolute;
@@ -625,12 +631,12 @@ form ul li{
 .left-side #goldstar{
   color: #424868 !important;
   position: relative;
-  left: 120px;
+  left: 130px;
   top:  0px;
 }
 .left-side #brlajkova{
     position: relative;
-    left: 130px;
+    left: 140px;
     top:  1px;  
 }
 .sendMsg{
@@ -962,6 +968,7 @@ footer{
 }
 .right-side{
     padding-bottom: 30px;
+    border-radius: 10px;
 }
 .closeConv
 {
@@ -999,6 +1006,8 @@ footer a{
 img{
     aspect-ratio: 1/1;
 }
+
+
   @media only screen and (max-width: 425px)
   {
     /*Projektna nedelja tekst*/
