@@ -32,6 +32,7 @@
     <title>User</title>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="navsearch">
         <h2><a href="hexa.php">Projektna <span>nedelja</span></a></h2>
         <input type="text" placeholder="Pretrazite" id="search-input">
@@ -56,6 +57,14 @@
 
                         <button id="userpagemsg">Message</button>
                     </div>
+                    <section class="conversation">
+                        <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <input type="text" class="msg" placeholder="New message">
+                            <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </section>
             </div>
         
        
