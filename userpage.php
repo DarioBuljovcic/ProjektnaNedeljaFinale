@@ -7,6 +7,10 @@
     $imgSql = "SELECT img FROM users WHERE Id=$id";
     $img = mysqli_query($conn,$imgSql);
     $img = mysqli_fetch_assoc($img)['img'];
+    $idMain = $_SESSION['id'];
+    $imgSql = "SELECT img FROM users WHERE Id=$idMain";
+    $imgUser = mysqli_query($conn,$imgSql);
+    $imgUser = mysqli_fetch_assoc($imgUser)['img'];
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +36,7 @@
         <input type="text" placeholder="Pretrazite" id="search-input">
         <button id="aa"><i class="fa-solid fa-magnifying-glass"></i></button>
         <div class="divimg">
-        <img src="img/profile2.jpg" width="100%" class="navimg" alt="" srcset="">
+        <img src="img/<?php echo $imgUser?>" width="100%" class="navimg" alt="" srcset="">
         </div>
     </div>
     <div class="loadScreen">
