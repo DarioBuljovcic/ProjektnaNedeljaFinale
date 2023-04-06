@@ -217,7 +217,7 @@ $(document).ready(()=>{
             interval=setInterval(() => {
                 showMsgs();
                 $(".conversation").trigger("refresh");
-            }, 1000);
+            }, 10000);
 
             //funkcija za slanje poruka
             $(".sendMsg").click((e)=>{

@@ -69,6 +69,7 @@ $(document).ready(()=>{
                     if($("#postContent").val()){
                         
                         let msg = $("#postContent").val();
+                        $("#postContent").val("");
                         let username = $("#username").text();
                         let id = $("#username").attr('name');
                         $.ajax({

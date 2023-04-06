@@ -940,7 +940,7 @@ footer{
 }
 .msgText{
     text-align: center;
-    border-radius: 50px;
+    border-radius: 5px;
     padding-inline: 10px;
     padding-block: 5px;
     max-width: 50%;
@@ -1007,7 +1007,10 @@ img{
     aspect-ratio: 1/1;
 }
 
-
+body footer + div .override {
+    z-index: -100 !important;
+    display:none !important;
+}
   @media only screen and (max-width: 425px)
   {
     /*Projektna nedelja tekst*/

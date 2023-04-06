@@ -169,79 +169,79 @@ document.querySelector('.divimg').addEventListener('click',()=>{
 
 
 var w = window.innerWidth;
-// if(w<=425)
-// {
-//     document.querySelector('#imgsmall').addEventListener('click',()=>{
-//         let popup=document.querySelector('.popup-prof');
-//         let body = document.querySelector('body');
+if(w<=425)
+{
+    document.querySelector('#imgsmall').addEventListener('click',()=>{
+        let popup=document.querySelector('.popup-prof');
+        let body = document.querySelector('body');
         
-//         if(popup.style.transform=='translateY(3svh)')
-//         {
-//             popup.style.transform='translateY(100svh)';
-//             popup.style.opacity="0";
-//             body.style.overflow='visible';
-//         }
-//         else{
-//             popup.style.transform='translateY(3svh)';
-//             popup.style.opacity="1";
-//             body.style.overflow='hidden';
-//         }
-//     });
+        if(popup.style.transform=='translateY(3svh)')
+        {
+            popup.style.transform='translateY(100svh)';
+            popup.style.opacity="0";
+            body.style.overflow='visible';
+        }
+        else{
+            popup.style.transform='translateY(3svh)';
+            popup.style.opacity="1";
+            body.style.overflow='hidden';
+        }
+    });
 
-//     document.querySelector('#footstar').addEventListener('click',()=>{
-//         let popup=document.querySelector('.left-wrapper .left-side');
-//         let body = document.querySelector('body');
-//         let popup2=document.querySelector('.left-wrapper');
+    document.querySelector('#footstar').addEventListener('click',()=>{
+        let popup=document.querySelector('.left-wrapper .left-side');
+        let body = document.querySelector('body');
+        let popup2=document.querySelector('.left-wrapper');
         
-//         if(popup.style.transform=='translateY(-1svh)')
-//         {
-//             popup.style.transform='translateY(100svh)';
-//             popup.style.opacity="0";
-//             body.style.overflow='visible';
+        if(popup.style.transform=='translateY(-1svh)')
+        {
+            popup.style.transform='translateY(100svh)';
+            popup.style.opacity="0";
+            body.style.overflow='visible';
 
-//             popup2.style.transform='translateY(100svh)';
-//             popup2.style.opacity="0";
-//         }
-//         else{
-//             popup.style.transform='translateY(-1svh)';
-//             popup.style.opacity="1";
-//             body.style.overflow='hidden';
+            popup2.style.transform='translateY(100svh)';
+            popup2.style.opacity="0";
+        }
+        else{
+            popup.style.transform='translateY(-1svh)';
+            popup.style.opacity="1";
+            body.style.overflow='hidden';
 
-//             popup2.style.transform='translateY(-1svh)';
-//             popup2.style.opacity="1";
-//         }
-//     });
-// }
+            popup2.style.transform='translateY(-1svh)';
+            popup2.style.opacity="1";
+        }
+    });
+}
 
 
-// document.querySelector('#logout').addEventListener('click', e =>{
+document.querySelector('#logout').addEventListener('click', e =>{
     
-//     e.preventDefault();   
-//     $.ajax({
-//         type:'POST',
-//         url:'php/DeleteSession.php'
-//     })
-//     window.location.href = "index.php";
-// })
+    e.preventDefault();   
+    $.ajax({
+        type:'POST',
+        url:'php/DeleteSession.php'
+    })
+    window.location.href = "index.php";
+})
 
-// document.querySelector('#editAccount').addEventListener('click', () =>{
-//     document.querySelector('.custom-modal').style.display = 'block';
-//     $("body").css('overflow','hidden');
-// });
-// document.querySelector('#closeModal').addEventListener('click', () =>{
-//     document.querySelector('.custom-modal').style.display = 'none';
-//     $("body").css('overflow','visible');
-// })
-// document.querySelector('#deleteProfile').addEventListener('click', e =>{
-//     e.preventDefault()
+document.querySelector('#editAccount').addEventListener('click', () =>{
+    document.querySelector('.custom-modal').style.display = 'block';
+    $("body").css('overflow','hidden');
+});
+document.querySelector('#closeModal').addEventListener('click', () =>{
+    document.querySelector('.custom-modal').style.display = 'none';
+    $("body").css('overflow','visible');
+})
+document.querySelector('#deleteProfile').addEventListener('click', e =>{
+    e.preventDefault()
 
-//     let text = 'Da li ste sigurni da zelite da obrisete profil?'
+    let text = 'Da li ste sigurni da zelite da obrisete profil?'
 
-//     if(confirm(text)===true){
-//         let user = new User()
-//         user.delete()
-//     }
-// });
+    if(confirm(text)===true){
+        let user = new User()
+        user.delete()
+    }
+});
 
 
 
