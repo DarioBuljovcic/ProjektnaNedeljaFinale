@@ -1,6 +1,9 @@
 <?php 
     include 'php/config.php';
     session_start();
+    if(!$_SESSION['username']){
+        header('Location: ./index.php');
+    }
     $username = base64_decode($_GET['username']);
     $email = base64_decode($_GET['email']);
     $id = base64_decode($_GET['id']);
@@ -22,8 +25,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/userpage.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" 
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
             crossorigin="anonymous">
@@ -35,10 +38,14 @@
     <div class="overlay"></div>
     <div class="navsearch">
         <h2><a href="hexa.php">Projektna <span>nedelja</span></a></h2>
-        <input type="text" placeholder="Pretrazite" id="search-input">
-        <button id="aa"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="searchInput">
+            <input type="text" placeholder="Pretrazite" id="search-input">
+            <button id="aa" aria-pressed="false"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        
         <div class="divimg">
-        <img src="img/<?php echo $imgUser?>" width="100%" class="navimg" alt="" srcset="">
+            <!--<a href="./user.html"><img src="img/profile2.jpg" width="100%" class="navimg" alt="" srcset=""></a>-->
+            <img src="img/<?php echo $img?>" width="100%" class="navimg" alt="" srcset="">
         </div>
     </div>
     <div class="loadScreen">
