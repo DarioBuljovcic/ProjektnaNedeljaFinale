@@ -196,17 +196,22 @@ body{
 
     .textUsers{        
         margin-right: 10px;
-        padding-right: 10px;
-        display: grid;
-        gap:5px;
-        align-items: center;
-        justify-items: start;
+        padding-right: 30px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 200px;
+        &::-webkit-scrollbar-thumb{
+            color: transparent;
+            background-color: transparent;
+        }
         .msgReciver{
             display: flex;
             gap:10px;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             color:$fontClr1;
+            width: 100%;
+            margin-bottom: 15px;
             cursor: pointer;
             img{
                 height: 40px;

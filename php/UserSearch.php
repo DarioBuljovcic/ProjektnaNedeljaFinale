@@ -15,7 +15,7 @@
         <h4><?php echo $row['username']?></h4>
         <p><?php echo $row['email']?></p>
     </div>
-    <i class="fa fa-paper-plane-o"></i>
+    <i class="fa fa-paper-plane-o userMsg"></i>
 </div>
 <?php endif;endwhile;endif;?>
 

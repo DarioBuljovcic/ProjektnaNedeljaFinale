@@ -206,7 +206,7 @@ $(document).ready(()=>{
         })
     }
     function msgScreen(){
-        let reciver;
+        let reciver ;
         function showUsers(){
             $.ajax({
                 type:'POST',
@@ -223,9 +223,14 @@ $(document).ready(()=>{
                         $(".messages").animate({
                             scrollTop: $(".messages").prop("scrollHeight")
                         }, 500);
+
                         //funkcija za prikaz poruka
                         function showMsgs(){
-                            reciver = $(e.currentTarget).attr("name");
+                            console.log("aaaa")
+                            if(! $(e.currentTarget).attr("name"))
+                                reciver = $(".msgReciver")[0].attr("name");
+                            else
+                                reciver = $(e.currentTarget).attr("name");
                             
                             $.ajax({
                                 type:'POST',
@@ -277,14 +282,14 @@ $(document).ready(()=>{
             })
         }
         showUsers();
-        $(".fa-paper-plane-o").click((e)=>{
+        $(".userMsg").click((e)=>{
             $(".messages").animate({
                 scrollTop: $(".messages").prop("scrollHeight")
             }, 500);
             //funkcija za prikaz poruka
             function showMsgs(){
                 reciver = $(e.target).closest(".singleitemsearchh").attr("name");
-                
+                console.log("aaaa");
                 $.ajax({
                     type:'POST',
                     url:'php/ShowMessages.php',
