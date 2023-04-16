@@ -94,11 +94,14 @@
                 </div>
                     
                 <section class="conversation">
-                    <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
-                    <div class="messages"></div>
-                    <div class="controls">
+                    <div class="textUsers"></div>
+                    <div class="textBox">
+                        <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
+                        <div class="messages"></div>
+                        <div class="controls">
                         <input type="text" class="msg" placeholder="New message">
                         <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                    </div>
                     </div>
                 </section>
 
@@ -132,17 +135,17 @@
         <form id="editForm">
             <h2>Izmenite korisnika</h2>
                 <div class="form">
-                    <input type="text" id="korisnicko_ime" name="korisnicko_ime" placeholder=" " autocomplete="off" class="form__input">
-                    <label for="korisnicko_ime" class="form__label">Username</label>
+                    <input type="text" id="korisnicko_ime" name="korisnicko_ime" placeholder=" " autocomplete="off" class="form__input input1">
+                    <label for="korisnicko_ime" class="form__label label1">Username</label>
                 </div>
 
                 <div class="form2">
-                    <input type="text" id="edit_email" name="register_email" placeholder=" " autocomplete="off" class="form2__input">
-                    <label for="edit_email" class="form2__label">Email</label>
+                    <input type="text" id="edit_email" name="register_email" placeholder=" " autocomplete="off" class="form__input input2">
+                    <label for="edit_email" class="form__label label2">Email</label>
                 </div>
                 <div class="form3">
-                    <input type="password" id="edit_password" name="sifra" placeholder=" "  autocomplete="off" class="form3__input">
-                    <label for="edit_password" class="form3__label">Password</label>
+                    <input type="password" id="edit_password" name="sifra" placeholder=" "  autocomplete="off" class="form__input input3">
+                    <label for="edit_password" class="form__label label3">Password</label>
                 </div>
                 
 
@@ -160,6 +163,10 @@
 
         <button id="deleteProfile">Obrisi profil</button>
     </div>
+
+    <button class="openConv">
+        <i class="fa fa-paper-plane-o"></i>
+    </button>
 
     <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
 
