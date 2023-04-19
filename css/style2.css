@@ -438,10 +438,7 @@ img {
   display: flex;
   justify-content: space-between;
   color: grey;
-  margin-bottom: -10px;
-}
-.right-side .single-post .post-actions #removePost:hover {
-  color: red;
+  margin-bottom: -17px;
 }
 .right-side .single-post .post-actions div {
   display: flex;
