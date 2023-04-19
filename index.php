@@ -78,14 +78,16 @@
             <h2 id="logint">Login</h2>
             <p id="ulg">Uloguj se u svoj nalog</p>
 
-            <div>
+            <div class="form">
                 <!-- <label>Email:</label>  -->
-                <input type="email" name="email" id="login_email" placeholder="Email adress">
+                <input type="text" id="login_email"  name="email" placeholder=" " autocomplete="off" class="form__input">
+                <label for="login_email" class="form__label">Email</label>
             </div>
 
-            <div>
+            <div class="form">
                 <!-- <label>Lozinka:</label> -->
-                <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
+                <input type="password" name="lozinka" id="login_lozinka" placeholder=" " autocomplete="off" class="form__input">
+                <label for="login_lozinka" class="form__label">Password</label>
             </div>
             
             <div>
