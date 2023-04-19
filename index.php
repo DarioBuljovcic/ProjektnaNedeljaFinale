@@ -60,7 +60,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleIndex.css">
+    <link rel="stylesheet" href="css/styleIndex.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Grape+Nuts&family=Kanit&display=swap" rel="stylesheet">
 
     <title>Hexa</title>
@@ -73,21 +73,20 @@
     <h1 id="naslovind">Projektna <span style="color: #4d547a;">nedelja</span></h1>
      <h2 id="drmr">Drustvena mreza <span id="drmrezatekst"></span></h2>
 
-    <div class="main-wrapper">
-        <form id="loginForm" class="loginForm" method="post" action="index.php" >
-            <h2 id="logint">Login</h2>
-            <p id="ulg">Uloguj se u svoj nalog</p>
+    <div class="wrapper-max">
+        <div class="main-wrapper">
+            <form id="loginForm" class="loginForm" method="post" action="index.php" >
+                <h2 id="logint">Login</h2>
+                <p id="ulg">Uloguj se u svoj nalog</p>
 
-            <div class="form">
+            <div>
                 <!-- <label>Email:</label>  -->
-                <input type="text" id="login_email"  name="email" placeholder=" " autocomplete="off" class="form__input">
-                <label for="login_email" class="form__label">Email</label>
+                <input type="email" name="email" id="login_email" placeholder="Email adress">
             </div>
 
-            <div class="form">
+            <div>
                 <!-- <label>Lozinka:</label> -->
-                <input type="password" name="lozinka" id="login_lozinka" placeholder=" " autocomplete="off" class="form__input">
-                <label for="login_lozinka" class="form__label">Password</label>
+                <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
             </div>
             
             <div>
@@ -104,29 +103,30 @@
                 <input type="text" id="korisnicko_ime" name="username" placeholder="Username">
             </div>
 
-            <div>
-                <!-- <label for="email">Email adresa: *</label> -->
-                <input type="text" id="email" name="email" placeholder="Email adress">
-            </div>
+                <div>
+                    <!-- <label for="email">Email adresa: *</label> -->
+                    <input type="text" id="email" name="email" placeholder="Email adress">
+                </div>
 
-            <div>
-                <!-- <label for="lozinka">Lozinka: *</label> -->
-                <input type="password" id="lozinka" name="password" placeholder="Password">
-            </div>
+                <div>
+                    <!-- <label for="lozinka">Lozinka: *</label> -->
+                    <input type="password" id="lozinka" name="password" placeholder="Password">
+                </div>
 
-            <div>
-                <!-- <label for="ponovi_lozinku">Ponovi lozinku: *</label> -->
-                <input type="password" id="password2" name="password2" placeholder="Confirm password">
-            </div>
+                <div>
+                    <!-- <label for="ponovi_lozinku">Ponovi lozinku: *</label> -->
+                    <input type="password" id="password2" name="password2" placeholder="Confirm password">
+                </div>
 
-            <div>
-                <button id="btn" type="submit" name="Register" value="false">Registruj se</button>
-            </div>
-        </form>
-    </div> 
-    <div class="no-acc-register">
-         <p>or</p>
-        <button id="registracija">Registruj se</button>
+                <div>
+                    <button id="btn" type="submit" name="Register" value="false">Registruj se</button>
+                </div>
+            </form>
+        </div> 
+        <div class="no-acc-register">
+            <p>or</p>
+            <button id="registracija">Registruj se</button>
+        </div>
     </div>
     
     <script src="js/Validator.js"></script>

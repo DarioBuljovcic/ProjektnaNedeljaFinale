@@ -114,6 +114,7 @@ $(document).ready(()=>{
             });
         }
     });
+    msgScreen();
     function userPage(){
         $('.singleitemsearchh').off();
         $('.singleitemsearchh').click( e =>{
@@ -125,15 +126,75 @@ $(document).ready(()=>{
 
         });
     }
+    // function msgScreen(){
+    //     let reciver;
+    //     $(".fa-paper-plane-o").click((e)=>{
+    //         $(".messages").animate({
+    //             scrollTop: $(".messages").prop("scrollHeight")
+    //         }, 500);
+    //         //funkcija za prikaz poruka
+    //         function showMsgs(){
+    //             reciver = $(e.target).closest(".singleitemsearchh").attr("name");
+                
+    //             $.ajax({
+    //                 type:'POST',
+    //                 url:'php/ShowMessages.php',
+    //                 data:{
+    //                     id:reciver
+    //                 },
+    //                 success: function(data){
+    //                     $(".messages").html(data);
+                        
+    //                 }
+    //             })
+    //         }
+    //         showMsgs();
+    //         $("body").css('overflow','hidden');
+    //         $(".overlay").css('transform','scale(1)');
+    //         $(".conversation").css('transform','ScaleY(1)');
+
+    //         //funkcija za refreshovanje poruka
+    //         interval=setInterval(() => {
+    //             showMsgs();
+    //             $(".conversation").trigger("refresh");
+    //         }, 1000);
+    //         //funkcija za slanje poruka
+    //         $(".sendMsg").click((e)=>{
+    //             e.preventDefault();
+    //             if(reciver){
+    //                 console.log(reciver)
+    //                 let msg = $(e.target).closest('.controls').find('.msg').val();
+    //                 $(e.target).closest('.controls').find('.msg').val("");
+    //                 $.ajax({
+    //                     type:'POST',
+    //                     url:'php/SendMessage.php',
+    //                     data:{
+    //                         id:reciver,
+    //                         msg:msg
+    //                     },
+    //                     success: function(data){
+    //                         $(".messages").animate({
+    //                             scrollTop: $(".messages").prop("scrollHeight")
+    //                         }, 500);
+    //                         showMsgs();
+    //                         $(".conversation").trigger("refresh");
+    //                     }
+    //                 })
+    //             }
+            
+    //         })
+    //     })
+    // }
     function msgScreen(){
         let reciver;
-        $(".fa-paper-plane-o").click((e)=>{
+        $("#userpagemsg").click((e)=>{
+            console.log('aaa');
             $(".messages").animate({
                 scrollTop: $(".messages").prop("scrollHeight")
             }, 500);
             //funkcija za prikaz poruka
             function showMsgs(){
-                reciver = $(e.target).closest(".singleitemsearchh").attr("name");
+                reciver = $(e.target).closest(".left-side").find("#username").attr("name");
                 
                 $.ajax({
                     type:'POST',
@@ -156,7 +217,8 @@ $(document).ready(()=>{
             interval=setInterval(() => {
                 showMsgs();
                 $(".conversation").trigger("refresh");
-            }, 1000);
+            }, 10000);
+
             //funkcija za slanje poruka
             $(".sendMsg").click((e)=>{
                 e.preventDefault();

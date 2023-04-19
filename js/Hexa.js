@@ -69,6 +69,7 @@ $(document).ready(()=>{
                     if($("#postContent").val()){
                         
                         let msg = $("#postContent").val();
+                        $("#postContent").val("");
                         let username = $("#username").text();
                         let id = $("#username").attr('name');
                         $.ajax({
@@ -188,23 +189,107 @@ $(document).ready(()=>{
                 {
                     $("body").css('overflow','');
                     $(".conversation").css('transform','ScaleY(0)');
-                    $(".overlay").css('transform','scale(0)');
+                    $(".overlay").css('opacity','0');
+                    $(".overlay").css('z-index','-1000');
                     $(".sendMsg").off();
                     clearInterval(interval);
+                });
+                $(".openConv").on('click',function(e) 
+                {
+                    $("body").css('overflow','hidden');
+                    $(".overlay").css('opacity','1');
+                    $(".overlay").css('z-index','1000');
+                    $(".conversation").css('transform','ScaleY(1)');
+                    msgScreen()
                 });
             }
         })
     }
     function msgScreen(){
-        let reciver;
-        $(".fa-paper-plane-o").click((e)=>{
+        let reciver ;
+        function showUsers(){
+            $.ajax({
+                type:'POST',
+                url:'php/MessaggeUsers.php',
+                data:{
+                    id:reciver
+                },
+                success: function(data){
+                    $(".textUsers").html(data);
+                    
+                    $(".msgReciver").click((e)=>{
+                        $(".sendMsg").off();
+                        clearInterval(interval);
+                        $(".messages").animate({
+                            scrollTop: $(".messages").prop("scrollHeight")
+                        }, 500);
+
+                        //funkcija za prikaz poruka
+                        function showMsgs(){
+                            console.log("aaaa")
+                            if(! $(e.currentTarget).attr("name"))
+                                reciver = $(".msgReciver")[0].attr("name");
+                            else
+                                reciver = $(e.currentTarget).attr("name");
+                            
+                            $.ajax({
+                                type:'POST',
+                                url:'php/ShowMessages.php',
+                                data:{
+                                    id:reciver
+                                },
+                                success: function(data){
+                                    $(".messages").html(data);
+                                    
+                                }
+                            })
+                        }
+                        showMsgs();
+            
+                        //funkcija za refreshovanje poruka
+                        interval=setInterval(() => {
+                            showMsgs();
+                            $(".conversation").trigger("refresh");
+                        }, 1000);
+                        //funkcija za slanje poruka
+                        $(".sendMsg").click((e)=>{
+                            e.preventDefault();
+                            if(reciver){
+                                console.log(reciver)
+                                let msg = $(e.target).closest('.controls').find('.msg').val();
+                                $(e.target).closest('.controls').find('.msg').val("");
+                                $.ajax({
+                                    type:'POST',
+                                    url:'php/SendMessage.php',
+                                    data:{
+                                        id:reciver,
+                                        msg:msg
+                                    },
+                                    success: function(data){
+                                        $(".messages").animate({
+                                            scrollTop: $(".messages").prop("scrollHeight")
+                                        }, 500);
+                                        showMsgs();
+                                        $(".conversation").trigger("refresh");
+                                    }
+                                })
+                            }
+                        
+                        });
+
+                    });
+                }
+            })
+        }
+        showUsers();
+        $(".userMsg").click((e)=>{
             $(".messages").animate({
                 scrollTop: $(".messages").prop("scrollHeight")
             }, 500);
             //funkcija za prikaz poruka
             function showMsgs(){
                 reciver = $(e.target).closest(".singleitemsearchh").attr("name");
-                
+                console.log("aaaa");
                 $.ajax({
                     type:'POST',
                     url:'php/ShowMessages.php',
@@ -217,9 +302,11 @@ $(document).ready(()=>{
                     }
                 })
             }
+            
             showMsgs();
             $("body").css('overflow','hidden');
-            $(".overlay").css('transform','scale(1)');
+            $(".overlay").css('opacity','1');
+            $(".overlay").css('z-index','1000');
             $(".conversation").css('transform','ScaleY(1)');
 
             //funkcija za refreshovanje poruka
@@ -252,7 +339,8 @@ $(document).ready(()=>{
                 }
             
             })
-        })
+        });
+        
     }
     let interval;
     let rowNum=5;

@@ -1,0 +1,29 @@
+.loadMore{
+    display: none;
+}
+#userpagemsg{
+    width: 93%;
+    padding: 3px 0px;
+    border-radius: 10px;
+    margin-top: -10px;
+    color: white;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid #424868;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+#userpagemsg:hover{
+    background-color: #424868;
+}
+#email{
+    margin-top: -16px !important;
+}
+.profile{
+    width: 70%;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    border: 5px solid hsl(0, 0%, 18.82%);
+    margin-bottom: 20px;
+}
