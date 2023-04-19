@@ -482,7 +482,7 @@ img{
             display: flex;
             justify-content: space-between;
             color: grey;
-            margin-bottom: -17px;
+            margin-bottom: -10px;
             div{
                 display: flex;
                 height: 30px;
@@ -492,6 +492,8 @@ img{
             a {
                 width: 60%;
                 font-weight: bold;
+                text-decoration: none;
+                color:grey;
                 #posttimg {
                     border-radius: 100%;
                     margin-right: 4px;

@@ -438,7 +438,7 @@ img {
   display: flex;
   justify-content: space-between;
   color: grey;
-  margin-bottom: -17px;
+  margin-bottom: -10px;
 }
 .right-side .single-post .post-actions div {
   display: flex;
@@ -449,6 +449,8 @@ img {
 .right-side .single-post .post-actions a {
   width: 60%;
   font-weight: bold;
+  text-decoration: none;
+  color: grey;
 }
 .right-side .single-post .post-actions a #posttimg {
   border-radius: 100%;
