@@ -79,29 +79,29 @@
                 <h2 id="logint">Login</h2>
                 <p id="ulg">Uloguj se u svoj nalog</p>
 
-                <div>
-                    <!-- <label>Email:</label>  -->
-                    <input type="email" name="email" id="login_email" placeholder="Email adress">
-                </div>
+            <div>
+                <!-- <label>Email:</label>  -->
+                <input type="email" name="email" id="login_email" placeholder="Email adress">
+            </div>
 
-                <div>
-                    <!-- <label>Lozinka:</label> -->
-                    <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
-                </div>
-                
-                <div>
-                    <button id="btn" type="submit" name="Login" value="false">Uloguj se</button>
-                </div>
-            </form>
-        </div>
-        <div class="main-wrapper registerContainer">
-            <form id="registrationForm" method="POST" action="index.php">
-                <h2 id="reghd">Registracija korisnika</h2>
-                <p id="ulg" style="margin-top: -29px;margin-bottom: 13px;">Kreiraj novi nalog</p>
-                <div>
-                    <!-- <label for="korisnicko_ime">Korisnicko ime: *</label> -->
-                    <input type="text" id="korisnicko_ime" name="username" placeholder="Username">
-                </div>
+            <div>
+                <!-- <label>Lozinka:</label> -->
+                <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
+            </div>
+            
+            <div>
+                <button id="btn" type="submit" name="Login" value="false">Uloguj se</button>
+            </div>
+        </form>
+    </div>
+    <div class="main-wrapper registerContainer">
+        <form id="registrationForm" method="POST" action="index.php">
+            <h2 id="reghd">Registracija korisnika</h2>
+            <p id="ulg" style="margin-top: -29px;margin-bottom: 13px;">Kreiraj novi nalog</p>
+            <div>
+                <!-- <label for="korisnicko_ime">Korisnicko ime: *</label> -->
+                <input type="text" id="korisnicko_ime" name="username" placeholder="Username">
+            </div>
 
                 <div>
                     <!-- <label for="email">Email adresa: *</label> -->
