@@ -211,7 +211,7 @@ img{
         //padding-right: 30px;
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 200px;
+        width: 225px;
         &::-webkit-scrollbar-thumb{
             color: transparent;
             background-color: transparent;
@@ -223,7 +223,6 @@ img{
             align-items: center;
             color:$fontClr1;
             width: 100%;
-            margin-bottom: 15px;
             padding:5px;
             cursor: pointer;
             border-radius: 5px;
