@@ -1,4 +1,3 @@
-
 $(document).ready(()=>{
 
     function loadTop5(){
@@ -37,7 +36,11 @@ $(document).ready(()=>{
                     $("#form").trigger("reset");
                     
                 });
-
+                $(".userLink").off();
+                $(".userLink").on('click',function(e) {
+                    let id=$(e.currentTarget).attr('name');
+                    window.location.href=`./userpage.php?id=${window.btoa(id)}`;    
+                });
                 $(".remove-btn").off();
                 $(".remove-btn").on('click',function(e) 
                 {
@@ -354,8 +357,5 @@ $(document).ready(()=>{
     let lastUser;
     let user;
     loadTop5();
-    loadPost(rowNum);
-    
-    
-    
+    loadPost(rowNum);   
 });

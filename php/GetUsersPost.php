@@ -4,7 +4,6 @@
     $id = $_POST['id'];
     $sql = "SELECT * FROM post WHERE user_id = $id ORDER BY Id DESC";
     $result = mysqli_query($conn,$sql);
-    // echo 'hello';
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){
             $user_id = $row['user_id'];
