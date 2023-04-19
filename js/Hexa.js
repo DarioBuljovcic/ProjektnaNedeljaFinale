@@ -16,9 +16,7 @@ $(document).ready(()=>{
                 e.preventDefault();
                 if($(e.target)[0] != $(e.currentTarget).find(".fa")[0]){
                     let id=$(e.currentTarget).attr('name');
-                    let user = $(e.currentTarget).find("h4").text();
-                    let email = $(e.currentTarget).find("p").text();
-                   window.location.href=`./userpage.php?id=${window.btoa(id)}&username=${window.btoa(user)}&email=${window.btoa(email)}`;
+                    window.location.href=`./userpage.php?id=${window.btoa(id)}`;
                 }
         });
     }
@@ -54,7 +52,7 @@ $(document).ready(()=>{
                         },
                         success: function(data){
                             if(data){
-                                
+                                console.log(data);
                                 loadPost(rowNum);
                                 $("#form").trigger("reset");
                             }
@@ -194,6 +192,7 @@ $(document).ready(()=>{
                     $(".sendMsg").off();
                     clearInterval(interval);
                 });
+                $(".openConv").off();
                 $(".openConv").on('click',function(e) 
                 {
                     $("body").css('overflow','hidden');
@@ -207,6 +206,7 @@ $(document).ready(()=>{
     }
     function msgScreen(){
         let reciver ;
+        
         function showUsers(){
             $.ajax({
                 type:'POST',
@@ -216,13 +216,17 @@ $(document).ready(()=>{
                 },
                 success: function(data){
                     $(".textUsers").html(data);
-                    
+                    lastUser = $(".textUsers").find(`.msgReciver[name='${user}']`).attr("aria-current","true");
                     $(".msgReciver").click((e)=>{
                         $(".sendMsg").off();
                         clearInterval(interval);
                         $(".messages").animate({
                             scrollTop: $(".messages").prop("scrollHeight")
                         }, 500);
+                        if(lastUser)
+                            lastUser.attr("aria-current","false");
+                        $(e.currentTarget).attr("aria-current","true")
+                        lastUser= $(e.currentTarget);
 
                         //funkcija za prikaz poruka
                         function showMsgs(){
@@ -255,28 +259,28 @@ $(document).ready(()=>{
                         $(".sendMsg").click((e)=>{
                             e.preventDefault();
                             if(reciver){
-                                console.log(reciver)
                                 let msg = $(e.target).closest('.controls').find('.msg').val();
                                 $(e.target).closest('.controls').find('.msg').val("");
-                                $.ajax({
-                                    type:'POST',
-                                    url:'php/SendMessage.php',
-                                    data:{
-                                        id:reciver,
-                                        msg:msg
-                                    },
-                                    success: function(data){
-                                        $(".messages").animate({
-                                            scrollTop: $(".messages").prop("scrollHeight")
-                                        }, 500);
-                                        showMsgs();
-                                        $(".conversation").trigger("refresh");
-                                    }
-                                })
-                            }
-                        
+                                if(msg){
+                                    $.ajax({
+                                        type:'POST',
+                                        url:'php/SendMessage.php',
+                                        data:{
+                                            id:reciver,
+                                            msg:msg
+                                        },
+                                        success: function(data){
+                                            $(".messages").animate({
+                                                scrollTop: $(".messages").prop("scrollHeight")
+                                            }, 500);
+                                            showMsgs();
+                                            $(".conversation").trigger("refresh");
+                                        }
+                                    })
+                                }                               
+                            }                       
                         });
-
+                        user = lastUser.attr("name");
                     });
                 }
             })
@@ -288,13 +292,14 @@ $(document).ready(()=>{
             }, 500);
             //funkcija za prikaz poruka
             function showMsgs(){
-                reciver = $(e.target).closest(".singleitemsearchh").attr("name");
-                console.log("aaaa");
+                lastUser.attr("aria-current","false");
+                user = $(e.target).closest(".singleitemsearchh").attr("name");                 
+                lastUser = $(".textUsers").find(`.msgReciver[name='${user}']`).attr("aria-current","true");
                 $.ajax({
                     type:'POST',
                     url:'php/ShowMessages.php',
                     data:{
-                        id:reciver
+                        id:user
                     },
                     success: function(data){
                         $(".messages").html(data);
@@ -321,21 +326,23 @@ $(document).ready(()=>{
                     console.log(reciver)
                     let msg = $(e.target).closest('.controls').find('.msg').val();
                     $(e.target).closest('.controls').find('.msg').val("");
-                    $.ajax({
-                        type:'POST',
-                        url:'php/SendMessage.php',
-                        data:{
-                            id:reciver,
-                            msg:msg
-                        },
-                        success: function(data){
-                            $(".messages").animate({
-                                scrollTop: $(".messages").prop("scrollHeight")
-                            }, 500);
-                            showMsgs();
-                            $(".conversation").trigger("refresh");
-                        }
-                    })
+                    if(msg){
+                        $.ajax({
+                            type:'POST',
+                            url:'php/SendMessage.php',
+                            data:{
+                                id:reciver,
+                                msg:msg
+                            },
+                            success: function(data){
+                                $(".messages").animate({
+                                    scrollTop: $(".messages").prop("scrollHeight")
+                                }, 500);
+                                showMsgs();
+                                $(".conversation").trigger("refresh");
+                            }
+                        })
+                    }
                 }
             
             })
@@ -344,6 +351,8 @@ $(document).ready(()=>{
     }
     let interval;
     let rowNum=5;
+    let lastUser;
+    let user;
     loadTop5();
     loadPost(rowNum);
     

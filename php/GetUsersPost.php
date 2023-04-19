@@ -16,7 +16,7 @@
 <div class='single-post' name="<?php echo $row['Id']?>">
 <div class='post-content'><?php echo $row['text']?></div>
     <div class='post-actions'>
-        <p><b><img src= "img/<?php echo $img['img']?>" width='4%' id='posttimg'></b> <?php echo $row['username']?></p>
+        <a class="userLink"><b><img src= "img/<?php echo $img['img']?>" width='4%' id='posttimg'></b> <?php echo $row['username']?></a>
         <div>
             <?php if(str_contains($row['likes_id'],$id)){?>
                 <button onclick="likeDislike(this)" class="likePostJS like-btn likedPost" aria-pressed="true"><span></span><div class="numCount"><div class="num1Count" style="transform: translateY(50px);"><?php echo $row['likes']-1?></div><div class="num2Count" style="transform: translateY(0px);"><?php echo $row['likes']?></div></div></button>

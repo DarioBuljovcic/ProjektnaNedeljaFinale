@@ -4,16 +4,18 @@
     if(!$_SESSION['username']){
         header('Location: ./index.php');
     }
-    $username = base64_decode($_GET['username']);
-    $email = base64_decode($_GET['email']);
     $id = base64_decode($_GET['id']);
-    $imgSql = "SELECT img FROM users WHERE Id=$id";
-    $img = mysqli_query($conn,$imgSql);
-    $img = mysqli_fetch_assoc($img)['img'];
+    $openUser = "SELECT id,username,email,img FROM users WHERE Id=$id";
+    $openUser = mysqli_query($conn,$openUser);
+    $openUser = mysqli_fetch_assoc($openUser);
+
     $idMain = $_SESSION['id'];
-    $imgSql = "SELECT img FROM users WHERE Id=$idMain";
-    $imgUser = mysqli_query($conn,$imgSql);
-    $imgUser = mysqli_fetch_assoc($imgUser)['img'];
+    $user = "SELECT username,email,img FROM users WHERE Id=$idMain";
+    $user = mysqli_query($conn,$user);
+    $user = mysqli_fetch_assoc($user);
+    $imgUser = $user['img'];
+    $usernameUser = $user['username'];
+    $emailUser = $user['email']
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +47,7 @@
         
         <div class="divimg">
             <!--<a href="./user.html"><img src="img/profile2.jpg" width="100%" class="navimg" alt="" srcset=""></a>-->
-            <img src="img/<?php echo $img?>" width="100%" class="navimg" alt="" srcset="">
+            <img src="img/<?php echo $imgUser?>" width="100%" class="navimg" alt="" srcset="">
         </div>
     </div>
     <div class="loadScreen">
@@ -57,26 +59,30 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="inner-container left-side">
-                    <img src="img/<?php echo $img?>" alt="" class="profile">
-            
-                    <p><b id="username" name="<?php echo $id?>"><?php echo $username?></b></p>
-                    <p id="email"><?php echo $email?></p>
+                    <img src="img/<?php echo $openUser['img']?>" alt="" class="profile">           
+                    <p><b id="username" name="<?php echo $openUser['id']?>"><?php echo $openUser['username']?></b></p>
+                    <p id="email"><?php echo $openUser['email']?></p>
 
                     <button id="userpagemsg">Message</button>
                 </div>
+
                 <section class="conversation">
-                    <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
-                    <div class="messages"></div>
-                    <div class="controls">
+                    <div class="textUsers"></div>
+                    <div class="textBox">
+                        <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
+                        <div class="messages"></div>
+                        <div class="controls">
                         <input type="text" class="msg" placeholder="New message">
                         <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
                     </div>
+                    </div>
                 </section>
+                
                 <div class="inner-container popup-prof">
-                    <a href="./user.html"><img src="img/<?php echo $img?>" alt="" class="profile"></a>
+                    <a href="./user.html"><img src="img/<?php echo $imgUser?>" alt="" class="profile"></a>
                     
-                    <p><b id="username" name = "<?php echo $id?>"><?php echo $username?></b></p>
-                    <p id="email"><?php echo $email?></p>
+                    <p><b id="username" name = "<?php echo $id?>"><?php echo $usernameUser?></b></p>
+                    <p id="email"><?php echo $emailUser?></p>
 
                     <button id="editAccount">Izmeni nalog</button>
                     <button id="logout">Logout</button>   
@@ -97,17 +103,17 @@
         <form id="editForm">
             <h2>Izmenite korisnika</h2>
                 <div class="form">
-                    <input type="text" id="korisnicko_ime" name="korisnicko_ime" placeholder=" " autocomplete="off" class="form__input">
-                    <label for="korisnicko_ime" class="form__label">Username</label>
+                    <input type="text" id="korisnicko_ime" name="korisnicko_ime" placeholder=" " autocomplete="off" class="form__input input1">
+                    <label for="korisnicko_ime" class="form__label label1">Username</label>
                 </div>
 
                 <div class="form2">
-                    <input type="text" id="edit_email" name="register_email" placeholder=" " autocomplete="off" class="form2__input">
-                    <label for="edit_email" class="form2__label">Email</label>
+                    <input type="text" id="edit_email" name="register_email" placeholder=" " autocomplete="off" class="form__input input2">
+                    <label for="edit_email" class="form__label label2">Email</label>
                 </div>
                 <div class="form3">
-                    <input type="password" id="edit_password" name="sifra" placeholder=" "  autocomplete="off" class="form3__input">
-                    <label for="edit_password" class="form3__label">Password</label>
+                    <input type="password" id="edit_password" name="sifra" placeholder=" "  autocomplete="off" class="form__input input3">
+                    <label for="edit_password" class="form__label label3">Password</label>
                 </div>
                 
 
@@ -125,6 +131,10 @@
 
         <button id="deleteProfile">Obrisi profil</button>
     </div>
+
+    <button class="openConv">
+        <i class="fa fa-paper-plane-o"></i>
+    </button>
 
     <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
 

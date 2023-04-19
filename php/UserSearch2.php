@@ -12,8 +12,10 @@
 ?>
 <div class ="singleitemsearchh" name="<?php echo $row['Id']?>">
     <img src="img/<?php echo $row['img']?>" alt="" srcset="" id="searchimg">
-    <h4><?php echo $row['username']?></h4>
-    <p><?php echo $row['email']?></p>
-    <i class="fa fa-paper-plane-o"></i>
+    <div>
+        <h4><?php echo $row['username']?></h4>
+        <p><?php echo $row['email']?></p>
+    </div>
+    <i class="fa fa-paper-plane-o userMsg"></i>
 </div>
 <?php endif;endwhile;endif;?>
