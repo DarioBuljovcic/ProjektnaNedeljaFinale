@@ -71,7 +71,9 @@ body{
     background-color: $navClr;
     border-end-start-radius: 1.5vh;
     border-end-end-radius: 1.5vh;
-    
+    .navimg{
+        cursor: pointer;
+    }
     a{
         font-family: 'Dancing Script', cursive;
         text-decoration: none;
@@ -111,6 +113,9 @@ body{
             border-bottom-right-radius: 15px;
             transition: 0.3s;
             border-left: 1px solid transparent;
+            &:hover{
+                color: gray;
+            }
         }
     }
 
@@ -125,11 +130,11 @@ body{
 }
 #userneki{
     position: absolute;
-    left: 39%;
+    left: 39.7%;
     top: 52px;
     background-color: #181c2f;
     margin: 4px, 4px;
-    width: 500px;
+    width: 440px;
     height: 260px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -169,6 +174,11 @@ body{
         i{
             margin-left: auto;
             cursor: pointer;
+            font-size: 23px;
+            transition: 0.2s;
+            &:hover{
+                color: gray;
+            }
         }
         &:first-child{
             margin-top:20px;
@@ -437,7 +447,8 @@ img{
             color: white;
             opacity: 0.9;
             padding-left: 15px;
-            width: 100%;            
+            width: 100%;     
+            padding-top: 7px;       
         }
         button {
             background-color: $actionBtnClr;
@@ -471,7 +482,7 @@ img{
             display: flex;
             justify-content: space-between;
             color: grey;
-            margin-bottom: -10px;
+            margin-bottom: -17px;
             div{
                 display: flex;
                 height: 30px;
@@ -653,6 +664,10 @@ img{
     border-radius: 20px;
     z-index: 1000;
     color:$fontClr1;
+    #tekstzasliku{
+        margin-top: 10px;
+        margin-bottom: -5px;
+    }
     input {
         padding:5px;
         margin-block:10px;
@@ -716,6 +731,10 @@ img{
         right: 2px;
         top: 14px;
         transition: 0.4s;
+        font-weight: bold;
+        &:hover{
+            color: gray;
+        }
     }
     button {
         color: white;
@@ -776,6 +795,9 @@ img{
         border: 2px solid #424868;
         transition: 0.2s;
         border-radius: 5px;
+        &:hover{
+            background-color: #424868;
+        }
     }
     #logout {
         padding-inline: 10px;

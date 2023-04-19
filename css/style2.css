@@ -57,6 +57,9 @@ body {
   border-end-start-radius: 1.5vh;
   border-end-end-radius: 1.5vh;
 }
+.navsearch .navimg {
+  cursor: pointer;
+}
 .navsearch a {
   font-family: "Dancing Script", cursive;
   text-decoration: none;
@@ -96,6 +99,9 @@ body {
   transition: 0.3s;
   border-left: 1px solid transparent;
 }
+.navsearch .searchInput button:hover {
+  color: gray;
+}
 .navsearch .divimg {
   max-height: 40px;
   aspect-ratio: 1/1;
@@ -107,11 +113,11 @@ body {
 
 #userneki {
   position: absolute;
-  left: 39%;
+  left: 39.7%;
   top: 52px;
   background-color: #181c2f;
   margin: 4px, 4px;
-  width: 500px;
+  width: 440px;
   height: 260px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -153,6 +159,11 @@ body {
 #userneki .singleitemsearchh i {
   margin-left: auto;
   cursor: pointer;
+  font-size: 23px;
+  transition: 0.2s;
+}
+#userneki .singleitemsearchh i:hover {
+  color: gray;
 }
 #userneki .singleitemsearchh:first-child {
   margin-top: 20px;
@@ -396,6 +407,7 @@ img {
   opacity: 0.9;
   padding-left: 15px;
   width: 100%;
+  padding-top: 7px;
 }
 .right-side form button {
   background-color: #181c2f;
@@ -427,6 +439,9 @@ img {
   justify-content: space-between;
   color: grey;
   margin-bottom: -10px;
+}
+.right-side .single-post .post-actions #removePost:hover {
+  color: red;
 }
 .right-side .single-post .post-actions div {
   display: flex;
@@ -604,6 +619,10 @@ img {
   color: white;
   --top:107px;
 }
+.custom-modal #tekstzasliku {
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
 .custom-modal input {
   padding: 5px;
   margin-block: 10px;
@@ -680,6 +699,10 @@ img {
   right: 2px;
   top: 14px;
   transition: 0.4s;
+  font-weight: bold;
+}
+.custom-modal #closeModal:hover {
+  color: gray;
 }
 .custom-modal button {
   color: white;
@@ -740,6 +763,9 @@ img {
   border: 2px solid #424868;
   transition: 0.2s;
   border-radius: 5px;
+}
+.popup-prof button:hover {
+  background-color: #424868;
 }
 .popup-prof #logout {
   padding-inline: 10px;
