@@ -211,7 +211,7 @@ img{
         //padding-right: 30px;
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 225px;
+        width: 240px;
         &::-webkit-scrollbar-thumb{
             color: transparent;
             background-color: transparent;
@@ -223,11 +223,11 @@ img{
             align-items: center;
             color:$fontClr1;
             width: 100%;
-            padding:5px;
+            padding:10px;
             cursor: pointer;
             border-radius: 5px;
             transition: background .2s ease;
-
+            text-overflow: ellipsis;
             //user select
             user-select: none;
             -moz-user-select: none;
@@ -242,7 +242,7 @@ img{
                 border-radius: 100%;
             }
             h4{
-                font-size: 20px;
+                font-size: 18px;
                 margin:0;
             }
             
@@ -361,6 +361,12 @@ img{
             border-left: 1px solid #181c2f;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
+            i{
+                transition: .2s;
+                &:hover{
+                    color: gray;
+                }
+            }  
         }
         input{
             transition: all .2s;
@@ -469,7 +475,9 @@ img{
         color: white;
         border-radius: 10px;
         position: relative;
-
+        #removePost:hover{
+            color: red;
+        }
         .post-content {
             padding-bottom: 10px;
             border-bottom: 1px solid #6b6a6a;
@@ -489,10 +497,17 @@ img{
                 gap:-10px;
             }
             a {
-                width: 60%;
                 font-weight: bold;
                 text-decoration: none;
                 color:grey;
+                cursor: pointer;
+                 //user select
+            user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            //-------------------//
                 #posttimg {
                     border-radius: 100%;
                     margin-right: 4px;
@@ -517,6 +532,9 @@ img{
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
+                &:hover{
+                    color: rgb(195, 107, 107);
+                }
                 span {
                     margin-right: 4px;
                     &:before {
@@ -557,6 +575,9 @@ img{
                 border-bottom-right-radius: 15px;
                 color: #787878;
                 margin-right: 10px;
+                &:hover{
+                    color: #598ceb;
+                }
                 #cspan {
                     display: inline-flex;
                     align-items: center;
@@ -588,6 +609,7 @@ img{
             transition: all .3s;
             overflow: hidden;
             overflow-y: auto;
+            margin-top: 15px;
             form {
                 height: 40px;
                 margin-top: 15px;
@@ -597,21 +619,23 @@ img{
                     padding: 17px 20px;
                     background-color: transparent;
                     outline: none;
-                    border: 2px solid $borderInput2;
+                    border: 2px solid gray;
                     color: white;
                     border-top-left-radius: 15px;
                     border-bottom-left-radius: 15px;
                 }
                 button {
                     width: 15%;
-                    border: 2px solid $borderInput2;
+                    border: 2px solid gray;
                     color: $fontClr1;
-                    font-weight: bold;
                     background-color: transparent;
                     transition: 0.3s;
                     padding: 8px 0px;
                     border-top-right-radius: 15px;
                     border-bottom-right-radius: 15px;
+                    &:hover{
+                        background-color: rgba(128, 128, 128, 0.262);
+                    }
                 }
             }
             .single-comment {
@@ -744,6 +768,9 @@ img{
         padding: 5px 25px;
         border-radius: 7px;
         transition: 0.3s;
+        &:hover{
+           background-color: #3c4264;
+        }
     }
     #deleteProfile {
         border: 2px solid red;
@@ -806,19 +833,23 @@ img{
 }
 .openConv{
     position: fixed;
-    width: 80px;
+    width: 70px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    right:20px;
-    bottom: 20px;
+    right:30px;
+    bottom: 30px;
     background-color: $actionBtnClr;
     color:$fontClr1;
     border:2px solid $logoP2;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .3s;
     i{
         font-size: 35px;
+    }
+    &:hover{
+        color: gray;
     }
 }
 

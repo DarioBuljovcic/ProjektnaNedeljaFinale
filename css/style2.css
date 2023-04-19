@@ -193,7 +193,7 @@ img {
   margin-right: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
-  width: 225px;
+  width: 240px;
 }
 .conversation .textUsers::-webkit-scrollbar-thumb {
   color: transparent;
@@ -206,10 +206,11 @@ img {
   align-items: center;
   color: white;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.2s ease;
+  text-overflow: ellipsis;
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -222,7 +223,7 @@ img {
   border-radius: 100%;
 }
 .conversation .textUsers .msgReciver h4 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
 }
 .conversation .textUsers .msgReciver[aria-current=true] {
@@ -328,6 +329,12 @@ img {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+.conversation .controls button i {
+  transition: 0.2s;
+}
+.conversation .controls button i:hover {
+  color: gray;
+}
 .conversation .controls input {
   transition: all 0.2s;
   padding: 5px;
@@ -426,6 +433,9 @@ img {
   border-radius: 10px;
   position: relative;
 }
+.right-side .single-post #removePost:hover {
+  color: red;
+}
 .right-side .single-post .post-content {
   padding-bottom: 10px;
   border-bottom: 1px solid #6b6a6a;
@@ -446,10 +456,15 @@ img {
   gap: -10px;
 }
 .right-side .single-post .post-actions a {
-  width: 60%;
   font-weight: bold;
   text-decoration: none;
   color: grey;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 .right-side .single-post .post-actions a #posttimg {
   border-radius: 100%;
@@ -474,6 +489,9 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+.right-side .single-post .post-actions .like-btn:hover {
+  color: rgb(195, 107, 107);
 }
 .right-side .single-post .post-actions .like-btn span {
   margin-right: 4px;
@@ -513,6 +531,9 @@ img {
   color: #787878;
   margin-right: 10px;
 }
+.right-side .single-post .post-actions .comment-btn:hover {
+  color: #598ceb;
+}
 .right-side .single-post .post-actions .comment-btn #cspan {
   display: inline-flex;
   align-items: center;
@@ -542,6 +563,7 @@ img {
   transition: all 0.3s;
   overflow: hidden;
   overflow-y: auto;
+  margin-top: 15px;
 }
 .right-side .single-post .post-comments form {
   height: 40px;
@@ -553,21 +575,23 @@ img {
   padding: 17px 20px;
   background-color: transparent;
   outline: none;
-  border: 2px solid #ededed;
+  border: 2px solid gray;
   color: white;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 .right-side .single-post .post-comments form button {
   width: 15%;
-  border: 2px solid #ededed;
+  border: 2px solid gray;
   color: white;
-  font-weight: bold;
   background-color: transparent;
   transition: 0.3s;
   padding: 8px 0px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+.right-side .single-post .post-comments form button:hover {
+  background-color: rgba(128, 128, 128, 0.262);
 }
 .right-side .single-post .post-comments .single-comment {
   border: 1px solid #ededed;
@@ -710,6 +734,9 @@ img {
   border-radius: 7px;
   transition: 0.3s;
 }
+.custom-modal button:hover {
+  background-color: #3c4264;
+}
 .custom-modal #deleteProfile {
   border: 2px solid red;
   color: red;
@@ -771,20 +798,24 @@ img {
 
 .openConv {
   position: fixed;
-  width: 80px;
+  width: 70px;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 30px;
   background-color: #181c2f;
   color: white;
   border: 2px solid #598ceb;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 }
 .openConv i {
   font-size: 35px;
+}
+.openConv:hover {
+  color: gray;
 }
 
 footer {
