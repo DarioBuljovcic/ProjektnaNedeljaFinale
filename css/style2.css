@@ -80,7 +80,7 @@ body {
   width: 80%;
   background-color: transparent;
   color: white;
-  border: 1px solid white;
+  border: 1px solid rgb(48, 48, 48);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   outline: none;
@@ -93,7 +93,7 @@ body {
   background-color: transparent;
   color: white;
   padding: 5px 15px;
-  border: 1px solid white;
+  border: 1px solid rgb(48, 48, 48);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   transition: 0.3s;
@@ -114,7 +114,7 @@ body {
 #userneki {
   position: absolute;
   left: 39.7%;
-  top: 52px;
+  top: 60px;
   background-color: #181c2f;
   margin: 4px, 4px;
   width: 440px;
@@ -128,15 +128,18 @@ body {
   max-height: 0px;
   transition: all 0.3s;
   border-top: #181c2f;
-  padding-inline: 20px;
   color: white;
 }
 #userneki .singleitemsearchh {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 25px;
+  padding: 15px 20px;
   cursor: pointer;
+  transition: 0.3s;
+}
+#userneki .singleitemsearchh:hover {
+  background: #282e4d;
 }
 #userneki .singleitemsearchh img {
   height: 40px;
@@ -164,9 +167,6 @@ body {
 }
 #userneki .singleitemsearchh i:hover {
   color: gray;
-}
-#userneki .singleitemsearchh:first-child {
-  margin-top: 20px;
 }
 
 img {
@@ -356,7 +356,7 @@ img {
   padding: 20px;
   border-radius: 10px;
   color: white;
-  border: 1px solid #ababab;
+  border: 1px solid rgb(48, 48, 48);
 }
 .left-side h4 {
   font-weight: bold;
@@ -395,7 +395,7 @@ img {
 .right-side {
   padding-bottom: 30px;
   border-radius: 10px;
-  border: 1px solid #ababab;
+  border: 2px solid rgb(48, 48, 48);
   display: grid;
   gap: 20px;
   padding: 30px;
@@ -438,7 +438,7 @@ img {
 }
 .right-side .single-post .post-content {
   padding-bottom: 10px;
-  border-bottom: 1px solid #6b6a6a;
+  border-bottom: 1px solid rgb(48, 48, 48);
   margin-bottom: 10px;
   font-size: 22px;
   word-break: break-all;
@@ -594,7 +594,7 @@ img {
   background-color: rgba(128, 128, 128, 0.262);
 }
 .right-side .single-post .post-comments .single-comment {
-  border: 1px solid #ededed;
+  border: 1px solid rgb(48, 48, 48);
   padding: 10px;
   margin-top: 20px;
   border-radius: 10px;
@@ -752,7 +752,7 @@ img {
   background-color: #181c2f;
   right: 3.5%;
   top: 5.7%;
-  border: 1px solid white;
+  border: 2px solid rgb(48, 48, 48);
   border-top: 1px solid #181c2f;
   padding: 10px;
   overflow-x: hidden;
@@ -787,13 +787,17 @@ img {
   background-color: transparent;
   border: 2px solid #424868;
   transition: 0.2s;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .popup-prof button:hover {
   background-color: #424868;
 }
 .popup-prof #logout {
   padding-inline: 10px;
+  width: 49%;
+}
+.popup-prof #editAccount {
+  width: 49%;
 }
 
 .openConv {

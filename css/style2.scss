@@ -10,7 +10,7 @@ $commentClr:#181c2f;
 $actionBtnClr:#181c2f;
 $insertPostClr:#181c2f;
 $borderInput:#ababab;
-$borderInput2:#ededed;
+$borderInput2:rgb(48, 48, 48);
 $popupClr:#181c2f;
 $loadMoreClr:#181c2f;
 $loadBorder:#598ceb;
@@ -94,7 +94,7 @@ body{
             width: 80%;
             background-color: transparent;
             color: $fontClr1;
-            border: 1px solid $fontClr1;
+            border: 1px solid $borderInput2;
             border-top-left-radius: 15px;
             border-bottom-left-radius: 15px;
             outline: none;
@@ -108,7 +108,7 @@ body{
             background-color: transparent;
             color: $fontClr1;
             padding: 5px 15px;
-            border: 1px solid $fontClr1;
+            border: 1px solid $borderInput2;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
             transition: 0.3s;
@@ -131,7 +131,7 @@ body{
 #userneki{
     position: absolute;
     left: 39.7%;
-    top: 52px;
+    top: 60px;
     background-color: #181c2f;
     margin: 4px, 4px;
     width: 440px;
@@ -145,14 +145,18 @@ body{
     max-height: 0px;
     transition: all .3s;
     border-top: #181c2f;
-    padding-inline: 20px;
+    // padding-inline: 20px;
     color: white;
     .singleitemsearchh{
         display: flex;
         align-items: center;
         gap:10px;
-        margin-top:25px;
+        padding: 15px 20px;
         cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            background: #282e4d;
+        }
         img{
             height: 40px;
             aspect-ratio: 1/1;
@@ -180,9 +184,7 @@ body{
                 color: gray;
             }
         }
-        &:first-child{
-            margin-top:20px;
-        }
+
     }
 }
 
@@ -392,7 +394,7 @@ img{
     padding: 20px;
     border-radius: 10px;
     color:white;
-    border:1px solid $borderInput;
+    border:1px solid $borderInput2;
     h4{
         font-weight: bold;
         font-size: 20px;
@@ -435,7 +437,7 @@ img{
 .right-side {
     padding-bottom: 30px;
     border-radius: 10px;
-    border:1px solid $borderInput;
+    border:2px solid $borderInput2;
     display: grid;
     gap:20px;
     padding: 30px;
@@ -480,7 +482,7 @@ img{
         }
         .post-content {
             padding-bottom: 10px;
-            border-bottom: 1px solid #6b6a6a;
+            border-bottom: 1px solid rgb(48, 48, 48);
             margin-bottom: 10px;
             font-size: 22px;
             word-break: break-all;
@@ -788,7 +790,7 @@ img{
     background-color: $popupClr;
     right: 3.5%;
     top: 5.7%;
-    border: 1px solid white;
+    border: 2px solid $borderInput2;
     border-top: 1px solid $popupClr;
     padding: 10px;
     overflow-x: hidden;
@@ -822,13 +824,17 @@ img{
         background-color: transparent;
         border: 2px solid #424868;
         transition: 0.2s;
-        border-radius: 5px;
+        border-radius: 10px;
         &:hover{
             background-color: #424868;
         }
     }
     #logout {
         padding-inline: 10px;
+        width: 49%;
+    }
+    #editAccount{
+        width: 49%;
     }
 }
 .openConv{
