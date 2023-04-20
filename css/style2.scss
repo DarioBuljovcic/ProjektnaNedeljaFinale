@@ -213,7 +213,7 @@ img{
         //padding-right: 30px;
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 240px;
+        width: 270px;
         &::-webkit-scrollbar-thumb{
             color: transparent;
             background-color: transparent;
@@ -441,13 +441,14 @@ img{
 
         #postContent {
             outline: none;
-            border: 2px solid $borderInput;
+            border: 2px solid $borderInput2;
             background-color: $insertPostClr;
             color: white;
             opacity: 0.9;
             padding-left: 15px;
             width: 100%;     
-            padding-top: 7px;       
+            padding-top: 7px; 
+            resize: none;            
         }
         button {
             background-color: $actionBtnClr;
@@ -457,8 +458,10 @@ img{
             transition: 0.3s;
             border-top-right-radius: 25px;
             border-bottom-right-radius: 25px;
-            border: 2px solid $borderInput;
-            
+            border: 2px solid $borderInput2;
+            &:hover{
+                opacity: 1;
+            }
         }
     }
 

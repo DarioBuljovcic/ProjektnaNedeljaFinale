@@ -2,10 +2,9 @@
     display: none;
 }
 #userpagemsg{
-    width: 93%;
+    width: 100%;
     padding: 3px 0px;
     border-radius: 10px;
-    margin-top: -10px;
     color: white;
     padding: 5px 10px;
     background-color: transparent;
@@ -18,6 +17,7 @@
 }
 #email{
     margin-top: -16px !important;
+    color: gray;
 }
 .profile{
     width: 70%;
@@ -26,4 +26,7 @@
     margin: auto;
     border: 5px solid hsl(0, 0%, 18.82%);
     margin-bottom: 20px;
+}
+#username{
+    font-size: 20px;
 }

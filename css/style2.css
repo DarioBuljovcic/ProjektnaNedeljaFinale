@@ -193,7 +193,7 @@ img {
   margin-right: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
-  width: 240px;
+  width: 270px;
 }
 .conversation .textUsers::-webkit-scrollbar-thumb {
   color: transparent;
@@ -405,13 +405,14 @@ img {
 }
 .right-side form #postContent {
   outline: none;
-  border: 2px solid #ababab;
+  border: 2px solid rgb(48, 48, 48);
   background-color: #181c2f;
   color: white;
   opacity: 0.9;
   padding-left: 15px;
   width: 100%;
   padding-top: 7px;
+  resize: none;
 }
 .right-side form button {
   background-color: #181c2f;
@@ -421,7 +422,10 @@ img {
   transition: 0.3s;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 2px solid #ababab;
+  border: 2px solid rgb(48, 48, 48);
+}
+.right-side form button:hover {
+  opacity: 1;
 }
 .right-side .single-post {
   background-color: #181c2f;
