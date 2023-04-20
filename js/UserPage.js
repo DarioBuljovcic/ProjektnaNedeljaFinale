@@ -10,7 +10,7 @@ $(document).ready(()=>{
             id:id
         }, success: function(data){
             $("#allPostsWrapper").html(data);
-
+            console.log(data)
             $(".like-btn").off()
             $(".like-btn").on('click',function(e) 
             {
