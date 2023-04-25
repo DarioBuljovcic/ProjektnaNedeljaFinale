@@ -50,7 +50,7 @@ body {
   justify-content: space-between;
   position: relative;
   z-index: 100;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding-block: 30px;
   padding-inline: 20px;
   background-color: #181c2f;
@@ -179,7 +179,7 @@ img {
   position: fixed;
   width: 850px;
   height: 500px;
-  padding: 25px;
+  padding: 15px;
   transform: scaleY(0);
   /* transform-origin: bottom; */
   z-index: 1000000;
