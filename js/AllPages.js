@@ -1,5 +1,4 @@
 
-
 const commentUpDown = btn => {
     let main_post_el = btn.closest('.single-post')
     let box = main_post_el.querySelector('.post-comments')

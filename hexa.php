@@ -53,7 +53,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/Hexa.css">
     
     
     <title>HEXA</title>
@@ -78,6 +78,17 @@
         </div>
     </div>
     <h3 id="userneki"></h3>
+    <section class="conversation">
+                    <div class="textUsers"></div>
+                    <div class="textBox">
+                        <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
+                        <div class="messages"></div>
+                        <div class="controls">
+                        <input type="text" class="msg" placeholder="New message">
+                        <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                    </div>
+                    </div>
+                </section>
 
     <div class="loadScreen">
         <img src="img/load.svg" alt=“blankimage”>
@@ -93,17 +104,7 @@
                     </div>   
                 </div>
                     
-                <section class="conversation">
-                    <div class="textUsers"></div>
-                    <div class="textBox">
-                        <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
-                        <div class="messages"></div>
-                        <div class="controls">
-                        <input type="text" class="msg" placeholder="New message">
-                        <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
-                    </div>
-                    </div>
-                </section>
+                
 
                 <div class="inner-container popup-prof">
                     <a href="./user.html"><img src="img/<?php echo $img?>" alt="" class="profile"></a>
@@ -168,7 +169,7 @@
         <i class="fa fa-paper-plane-o"></i>
     </button>
 
-    <footer><i class="fa-regular fa-star" id="footstar"></i><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2></footer>
+    <footer><i class="fa-regular fa-star" id="footstar"></i> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""></footer>
 
     <script src="js/Session.js"></script>
     <script src="js/AllPages.js"></script> 

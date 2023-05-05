@@ -296,7 +296,8 @@ $(document).ready(()=>{
             //funkcija za prikaz poruka
             function showMsgs(){
                 lastUser.attr("aria-current","false");
-                user = $(e.target).closest(".singleitemsearchh").attr("name");                 
+                user = $(e.target).closest(".singleitemsearchh").attr("name");   
+                reciver = user;               
                 lastUser = $(".textUsers").find(`.msgReciver[name='${user}']`).attr("aria-current","true");
                 $.ajax({
                     type:'POST',

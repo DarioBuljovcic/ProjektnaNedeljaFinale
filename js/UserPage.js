@@ -124,14 +124,7 @@ $(document).ready(()=>{
                 $(".conversation").css('transform','ScaleY(1)');
                 msgScreen()
             });
-            $("#userpagemsg").on('click',function(e){
-                $("body").css('overflow','hidden');
-                $(".overlay").css('opacity','1');
-                $(".overlay").css('z-index','1000');
-                $(".conversation").css('transform','ScaleY(1)');
-                user = $("#userpagemsg").closest(".left-side").find("#username").attr("name");
-                msgScreen();
-            })
+            
         }
     });
     msgScreen();
@@ -171,7 +164,6 @@ $(document).ready(()=>{
 
                         //funkcija za prikaz poruka
                         function showMsgs(){
-                            console.log("aaaa")
                             if(! $(e.currentTarget).attr("name"))
                                 reciver = $(".msgReciver")[0].attr("name");
                             else
@@ -196,8 +188,9 @@ $(document).ready(()=>{
                             showMsgs();
                             $(".conversation").trigger("refresh");
                         }, 1000);
-                        //funkcija za slanje poruka
+
                         $(".sendMsg").click((e)=>{
+                            console.log('zzzz')
                             e.preventDefault();
                             if(reciver){
                                 let msg = $(e.target).closest('.controls').find('.msg').val();
@@ -234,7 +227,8 @@ $(document).ready(()=>{
             //funkcija za prikaz poruka
             function showMsgs(){
                 lastUser.attr("aria-current","false");
-                user = $(e.target).closest(".singleitemsearchh").attr("name");                 
+                user = $(e.target).closest(".singleitemsearchh").attr("name");  
+                reciver = user;               
                 lastUser = $(".textUsers").find(`.msgReciver[name='${user}']`).attr("aria-current","true");
                 $.ajax({
                     type:'POST',
@@ -288,6 +282,70 @@ $(document).ready(()=>{
             
             })
         });
+        $("#userpagemsg").on('click',function(e){
+            clearInterval(interval);
+            $(".messages").animate({
+                scrollTop: $(".messages").prop("scrollHeight")
+            }, 500);
+            //funkcija za prikaz poruka
+            function showMsgs(){
+                lastUser.attr("aria-current","false");
+                user = $(e.currentTarget).closest(".left-side").find("#username").attr("name");     
+                reciver = user;            
+                lastUser = $(".textUsers").find(`.msgReciver[name='${user}']`).attr("aria-current","true");
+                $.ajax({
+                    type:'POST',
+                    url:'php/ShowMessages.php',
+                    data:{
+                        id:user
+                    },
+                    success: function(data){
+                        $(".messages").html(data);
+                        
+                    }
+                })
+            }
+            
+            showMsgs();
+            $("body").css('overflow','hidden');
+            $(".overlay").css('opacity','1');
+            $(".overlay").css('z-index','1000');
+            $(".conversation").css('transform','ScaleY(1)');
+
+            //funkcija za refreshovanje poruka
+            interval=setInterval(() => {
+                showMsgs();
+                $(".conversation").trigger("refresh");
+            }, 1000);
+            //funkcija za slanje poruka
+            $(".sendMsg").off();
+            $(".sendMsg").click((e)=>{
+                e.preventDefault();
+                if(reciver){
+                    console.log(reciver)
+                    let msg = $(e.target).closest('.controls').find('.msg').val();
+                    $(e.target).closest('.controls').find('.msg').val("");
+                    if(msg){
+                        $.ajax({
+                            type:'POST',
+                            url:'php/SendMessage.php',
+                            data:{
+                                id:reciver,
+                                msg:msg
+                            },
+                            success: function(data){
+                                $(".messages").animate({
+                                    scrollTop: $(".messages").prop("scrollHeight")
+                                }, 500);
+                                showMsgs();
+                                $(".conversation").trigger("refresh");
+                            }
+                        })
+                    }
+                }
+            
+            })
+        })
         
     }
 })

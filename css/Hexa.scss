@@ -130,10 +130,11 @@ body{
 }
 #userneki{
     position: absolute;
-    left: 39.7%;
+    left: 0;
+    right:0;
     top: 52px;
     background-color: #181c2f;
-    margin: 4px, 4px;
+    margin: auto;
     width: 440px;
     height: 260px;
     overflow-x: hidden;
@@ -459,7 +460,9 @@ img{
             
         }
     }
-
+    #allPostsWrapper{
+        position: relative;
+    }
     .single-post {
         background-color: $commentClr;
         padding: 15px;
@@ -602,6 +605,7 @@ img{
             overflow: hidden;
             overflow-y: auto;
             margin-top: 15px;
+            
             form {
                 height: 40px;
                 margin-top: 15px;
@@ -658,7 +662,9 @@ img{
         margin-inline:auto;
         margin-block: 15px;
         position: absolute;
-        right: 38%;
+        max-width: 120px;
+        left: 0;
+        right: 0;
     }
     .loadMore:hover{
         background-color: #424868;
@@ -850,5 +856,161 @@ footer{
 
     & ~ div{
         z-index: -100 !important;
+    }
+}
+
+/* Phone */
+@media only screen 
+  and (min-device-width: 425px) 
+  and (max-device-width: 812px)  { 
+    #userneki{
+       width: 400px;
+       left:-30px;
+    }
+    .popup-prof{
+        top:-500px;
+    }
+    .navsearch{
+        justify-content: center;
+        margin-bottom: 50px;
+        .divimg{
+            display: none;
+        }
+        h2{
+            display: none;
+        }
+        .searchInput{
+            width: 60%;
+        }
+    }
+    .conversation{
+        width:90%;
+        .textUsers{
+            width: 180px;
+                h4{
+                    font-size: 15px;
+                }
+        }   
+        .textBox{
+            .single-msg-S,
+            .single-msg-R
+            {
+                font-size: 13px;
+            }
+        }
+        
+    }
+    .row{
+        gap:20px;
+        z-index: 1;
+        .col-md-3{
+            position: absolute;
+            left: 0;
+            z-index: 10;  
+            width: 100%;
+            height: 100%;
+            .left-side{
+                //transform: translateY(500%);
+                width: 100%;
+                display: none;
+                .top5Users{
+
+                }
+            }         
+            
+            
+        }
+        .col-md-9{
+            width: 100%;
+            margin-bottom: 100px;
+        }
+    }
+    footer{
+        display: flex;
+        box-sizing: border-box;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline:20px;
+        background-color: #181c2f;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top: 1px solid gray;
+        z-index: 1002;
+        #footstar{
+            color:$borderInput2;
+        }
+        #footertekst{
+            font-family: 'Dancing Script', cursive;
+        }
+        #footertekst span{
+            color: #424868;
+        }
+        footer a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        img{
+            width: 40px;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+        }
+    }
+    .openConv{
+        top:5px;
+        z-index: 100000;
+        right:15px;
+        width: 50px;
+        position: absolute;
+        i{
+            font-size: 25px;
+        }
+    }
+}
+/* Laptop */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    
+}
+/* Tablet */
+@media 
+  (min-device-width: 900px) 
+  and (max-device-width: 1000px) {
+    .container{
+        max-width: 900px;
+        .left-side{
+            .top5Users{
+                img{
+                    margin-right: 0px;
+                }               
+            }
+        }
+    }
+}
+@media 
+  (min-device-width: 812px) 
+  and (max-device-width: 900px) {
+    .container{
+        max-width: 900px;
+        .col-md-3{
+            width: 30%;
+            .top5Users{
+                img{
+                    margin-right: 0px;
+                }
+            }
+        }
+        .col-md-9 {
+            flex: 0 0 auto;
+            width: 70%;
+        }
     }
 }
