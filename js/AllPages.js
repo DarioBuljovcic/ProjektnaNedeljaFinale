@@ -213,34 +213,7 @@ if(w<=425)
 }
 
 
-document.querySelector('#logout').addEventListener('click', e =>{
-    
-    e.preventDefault();   
-    $.ajax({
-        type:'POST',
-        url:'php/DeleteSession.php'
-    })
-    window.location.href = "index.php";
-})
 
-document.querySelector('#editAccount').addEventListener('click', () =>{
-    document.querySelector('.custom-modal').style.display = 'block';
-    $("body").css('overflow','hidden');
-});
-document.querySelector('#closeModal').addEventListener('click', () =>{
-    document.querySelector('.custom-modal').style.display = 'none';
-    $("body").css('overflow','visible');
-})
-document.querySelector('#deleteProfile').addEventListener('click', e =>{
-    e.preventDefault()
-
-    let text = 'Da li ste sigurni da zelite da obrisete profil?'
-
-    if(confirm(text)===true){
-        let user = new User()
-        user.delete()
-    }
-});
 
 
 

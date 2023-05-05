@@ -195,7 +195,7 @@ $(document).ready(()=>{
                     $(".sendMsg").off();
                     clearInterval(interval);
                 });
-                $(".openConv").off();
+                
                 $(".openConv").on('click',function(e) 
                 {
                     $("body").css('overflow','hidden');
@@ -221,11 +221,20 @@ $(document).ready(()=>{
                     $(".textUsers").html(data);
                     lastUser = $(".textUsers").find(`.msgReciver[name='${user}']`).attr("aria-current","true");
                     $(".msgReciver").click((e)=>{
+                        //obrisi stari interval za resetovanje poruka i izbrisi listener za slanje poruka
                         $(".sendMsg").off();
                         clearInterval(interval);
+
+                        //na telefonu sklanja ostale korisnike okretanje dugmeta
+                        $(".textUsers").attr('data-opened','false');
+                        $('.showUsers').attr('data-clicked','false'); 
+
+                        //spusti se do kraja poruka
                         $(".messages").animate({
                             scrollTop: $(".messages").prop("scrollHeight")
                         }, 500);
+
+                        //proveri da li je korisnik pre bio u konverzaciji i onda ponovno pocivanje konverzacije
                         if(lastUser)
                             lastUser.attr("aria-current","false");
                         $(e.currentTarget).attr("aria-current","true")
@@ -258,6 +267,7 @@ $(document).ready(()=>{
                             showMsgs();
                             $(".conversation").trigger("refresh");
                         }, 1000);
+
                         //funkcija za slanje poruka
                         $(".sendMsg").click((e)=>{
                             e.preventDefault();
@@ -283,6 +293,8 @@ $(document).ready(()=>{
                                 }                               
                             }                       
                         });
+
+                        //pamcenje zadnjeg korisnika
                         user = lastUser.attr("name");
                     });
                 }

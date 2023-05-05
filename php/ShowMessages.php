@@ -14,7 +14,7 @@
                 $imgU = mysqli_fetch_assoc($imgU)['img'];   
 ?>
 
-<div class='single-msg-S .single-msg' name="<?php echo $row['id']?>">
+<div class='single-msg-S single-msg' name="<?php echo $row['id']?>">
     
     <div class="msgText" style="background-color: #424868;">  <?php echo $row['messages']?> </div>
     <img src="img/<?php echo $imgU?>" alt="img of the user" class="msgImg">
@@ -28,7 +28,7 @@
         $imgR = mysqli_fetch_assoc($imgR)['img']; 
     ?>
     
-<div class='single-msg-R .single-msg' name="<?php echo $row['id']?>">
+<div class='single-msg-R single-msg' name="<?php echo $row['id']?>">
     <img src="img/<?php echo $imgR?>" alt="img of the user" class="msgImg">
     <div class="msgText" style="background-color: rgba(101, 187, 253, 0.373);">  <?php echo $row['messages']?> </div>   
 </div>
