@@ -83,7 +83,6 @@ $('#deleteProfile').click(e=>{
 })
 
 $('body').click(e=>{
-    console.log($(`.navsearch`).has(e.target).length);
     if(!$(`.navsearch`).has(e.target).length){        
         $('#userneki').css('max-height','0px');
         $('#aa').attr('aria-pressed','false');
