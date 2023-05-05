@@ -109,7 +109,7 @@
                     
                 
 
-                <div class="inner-container popup-prof">
+                <div class="inner-container popup-prof" data-opened="false">
                     <a href="./user.html"><img src="img/<?php echo $img?>" alt="" class="profile"></a>
                     
                     <p><b id="username" name = "<?php echo $id?>"><?php echo $username?></b></p>

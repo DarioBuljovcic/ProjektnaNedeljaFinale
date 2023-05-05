@@ -81,11 +81,34 @@ $('#deleteProfile').click(e=>{
         user.delete()
     }
 })
-
 $('body').click(e=>{
     if(!$(`.navsearch`).has(e.target).length){        
         $('#userneki').css('max-height','0px');
         $('#aa').attr('aria-pressed','false');
     }
 })
+$('body').click(e=>{     
+    if($('.popup-prof').attr('data-opened')=='false'){
+        $('.popup-prof').css('transform','translateY(0px)');
+        $('.popup-prof').css('opacity','1');
+        $('.popup-prof').attr('data-opened','true');
+    }else{
+        $('.popup-prof').css('transform','translateY(-500px)');
+        $('.popup-prof').css('opacity','0');
+        $('.popup-prof').attr('data-opened','false');
+    }
+})
+document.querySelector('.divimg').addEventListener('click',()=>{
+    let popup=document.querySelector('.popup-prof');
+
+    if(popup.style.transform=='translateY(0px)')
+    {
+        popup.style.transform='translateY(-450px)';
+        popup.style.opacity="0";
+    }
+    else{
+        popup.style.transform='translateY(0px)';
+        popup.style.opacity="1";
+    }
+});
 
