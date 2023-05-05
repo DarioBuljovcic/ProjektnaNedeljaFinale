@@ -66,6 +66,9 @@
     <title>Hexa</title>
 </head>
 <body>
+    <div id="particles-js">
+
+    </div>
     <!-- <div class="logo">
         <img src="img/logo.png" alt="" srcset="">
     </div> 
@@ -128,7 +131,8 @@
             <button id="registracija">Registruj se</button>
         </div>
     </div>
-    
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
     <script src="js/Validator.js"></script>
     <script src="js/app.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
