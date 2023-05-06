@@ -69,6 +69,9 @@
     <title>Hexa</title>
 </head>
 <body>
+    <div id="particles-js">
+
+    </div>
     <!-- <div class="logo">
         <img src="img/logo.png" alt="" srcset="">
     </div> 
@@ -133,7 +136,8 @@
         
         
     </div>
-    
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
     <script src="js/Validator.js"></script>
     <script src="js/app.js"></script>
     <script src="js/Login.js"></script>
