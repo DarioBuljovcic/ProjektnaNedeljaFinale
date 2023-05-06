@@ -15,7 +15,7 @@ body{
     transition: all .2s;
 }
 .wrapper-max{
-    background-color:black;
+    /* background-color:black; */
     padding-bottom: 30px;
     max-width: 600px;
     margin:auto;
