@@ -80,25 +80,28 @@
      <h2 id="drmr">Drustvena mreza <span id="drmrezatekst"></span></h2>
 
     <div class="wrapper-max">
-        <div class="main-wrapper">
+        <div class="main-wrapper loginContainer">
             <form id="loginForm" class="loginForm" method="post" action="index.php" >
                 <h2 id="logint">Login</h2>
                 <p id="ulg">Uloguj se u svoj nalog</p>
+                <div>
+                    <!-- <label>Email:</label>  -->
+                    <input type="email" name="email" id="login_email" placeholder="Email adress">
+                </div>
 
-            <div>
-                <!-- <label>Email:</label>  -->
-                <input type="email" name="email" id="login_email" placeholder="Email adress">
+                <div>
+                    <!-- <label>Lozinka:</label> -->
+                    <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
+                </div>
+                
+                <div>
+                    <button id="btn" type="submit" name="Login" value="false">Uloguj se</button>
+                </div>
+            </form>
+            <div class="no-acc-register">
+                <p>or</p>
+                <button class="rotateBtn" id="registracija" data-clicked="false">Registruj se</button>
             </div>
-
-            <div>
-                <!-- <label>Lozinka:</label> -->
-                <input type="password" name="lozinka" id="login_lozinka" placeholder="Password">
-            </div>
-            
-            <div>
-                <button id="btn" type="submit" name="Login" value="false">Uloguj se</button>
-            </div>
-        </form>
         </div>
 
         <div class="main-wrapper registerContainer">
@@ -125,21 +128,23 @@
                     <button id="btn" type="submit" name="Register" value="false">Registruj se</button>
                 </div>
             </form>
+            <div class="no-acc-register">
+                <p>or</p>
+                <button class="rotateBtn" id="registracija" data-clicked="false">Uloguj se</button>
+            </div>
         </div> 
         
-        <div class="no-acc-register">
-            <p>or</p>
-            <button id="registracija">Registruj se</button>
-        </div>
+        
     </div>
     <script src="particles.js"></script>
     <script src="app.js"></script>
     <script src="js/Validator.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/Login.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed("#drmrezatekst",{
-        strings: ["namenjena hakerima"],
+        strings: ["namenjena programerima"],
         typeSpeed:100,
         backSpeed:100,
         loop:true
