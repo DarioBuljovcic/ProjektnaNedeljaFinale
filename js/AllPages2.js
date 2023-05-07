@@ -87,7 +87,7 @@ $('body').click(e=>{
         $('#aa').attr('aria-pressed','false');
     }
 })
-$('body').click(e=>{     
+$('.navimg').click(e=>{     
     if($('.popup-prof').attr('data-opened')=='false'){
         $('.popup-prof').css('transform','translateY(0px)');
         $('.popup-prof').css('opacity','1');
