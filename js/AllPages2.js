@@ -41,13 +41,13 @@ if(w<=426)
     $("#footstar").click(e=>{          
         if($(e.currentTarget).data('data-clicked')=='true'){ 
             $('body').css('overflow','visible');
-            $('.left-side').css('transform','translateY(-500px)')
+            $('.left-side').css('top','-100%')
             $('.overlay').css('opacity','0');
             $('.overlay').css('z-index','-1');
             $(e.currentTarget).data('data-clicked','false');
         }else{  
             $('body').css('overflow','hidden');
-            $('.left-side').css('transform','translateY(0px)');
+            $('.left-side').css('top','20%');
             $('.overlay').css('opacity','1');
             $('.overlay').css('z-index','1000');
             $(e.currentTarget).data('data-clicked','true');
@@ -97,18 +97,6 @@ $('.navimg').click(e=>{
         $('.popup-prof').css('opacity','0');
         $('.popup-prof').attr('data-opened','false');
     }
-})
-document.querySelector('.divimg').addEventListener('click',()=>{
-    let popup=document.querySelector('.popup-prof');
-
-    if(popup.style.transform=='translateY(0px)')
-    {
-        popup.style.transform='translateY(-450px)';
-        popup.style.opacity="0";
-    }
-    else{
-        popup.style.transform='translateY(0px)';
-        popup.style.opacity="1";
-    }
 });
+
 

@@ -86,10 +86,10 @@
                         <button class="showUsers"><i><</i></button>
                         <button class="closeBtn closeConv"><i class="fa-regular fa-x"></i></button>
                         <div class="messages"></div>
-                        <div class="controls">
-                        <input type="text" class="msg" placeholder="New message">
-                        <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
-                    </div>
+                        <form class="controls">
+                            <input type="text" class="msg" placeholder="New message">
+                            <button class="sendMsg"> <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 </section>
 
@@ -172,7 +172,7 @@
         <i class="fa fa-paper-plane-o"></i>
     </button>
 
-    <footer><i class="fa-regular fa-star" id="footstar" data-clicked="false"></i> <h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""></footer>
+    <footer><i class="fa-regular fa-star" id="footstar"></i><h2><a href="hexa.php" id="footertekst">Projektna <span>nedelja</span></a></h2><img src="img/<?php echo $img?>" width="100%" class="navimg" id="imgsmall"alt="" srcset=""> </footer>
 
     <script src="js/Session.js"></script>
     <script src="js/AllPages2.js"></script> 

@@ -21,12 +21,12 @@
         <a class="userLink" name = "<?php echo $user_id?>"><b><img src= "img/<?php echo $img['img']?>" width='4%' id='posttimg'></b> <?php echo $row['username']?></a>
         <div>
             <?php if(str_contains($row['likes_id'],$id)){?>
-                <button onclick="likeDislike(this)" class="likePostJS like-btn likedPost" aria-pressed="true"><span></span><div class="numCount"><div class="num1Count" style="transform: translateY(50px);"><?php echo $row['likes']-1?></div><div class="num2Count" style="transform: translateY(0px);"><?php echo $row['likes']?></div></div></button>
+                <button  class="likePostJS like-btn likedPost" aria-pressed="true"><span></span><div class="numCount"><div class="num1Count" style="transform: translateY(50px);"><?php echo $row['likes']-1?></div><div class="num2Count" style="transform: translateY(0px);"><?php echo $row['likes']?></div></div></button>
             <?php }else {?>
-                <button onclick="likeDislike(this)" class="likePostJS like-btn" aria-pressed="false"><span></span><div class="numCount"><div class="num1Count" style="transform: translateY(0px);"><?php echo $row['likes']?></div><div class="num2Count" style="transform: translateY(-50px);"><?php echo $row['likes']+1?></div></div></button>
+                <button  class="likePostJS like-btn" aria-pressed="false"><span></span><div class="numCount"><div class="num1Count" style="transform: translateY(0px);"><?php echo $row['likes']?></div><div class="num2Count" style="transform: translateY(-50px);"><?php echo $row['likes']+1?></div></div></button>
             <?php } ?>
             
-            <button onclick="commentUpDown(this)" class='comment-btn' aria-pressed="false"><span id='cspan'><?php 
+            <button class='comment-btn' aria-pressed="false"><span id='cspan'><?php 
                 $post_id = $row['Id'];
                 $sql = "SELECT count(post_id) as num FROM comments WHERE post_id=$post_id";
                 $result2 = mysqli_query($conn,$sql);
@@ -42,10 +42,12 @@
         </div>
     </div>
     <div class='post-comments'>
-        <form >
-            <input class= "commentValue" type='text' placeholder='Napisi komentar...'>
-            <button id="postComment" class="postComment">Comment</button>
-        </form>
+        <div class="commentContainer">
+            <form >
+                <input class= "commentValue" type='text' placeholder='Napisi komentar...'>
+                <button id="postComment" class="postComment">Comment</button>
+            </form>
+            
             <?php
             $post_id = $row['Id'];
             $sql = "SELECT ALL* FROM comments WHERE post_id=$post_id ORDER BY post_id  ";
@@ -62,6 +64,7 @@
                     <span style="color:gray" id="usernamecom"><?php echo $username?></span><?php echo $row2['comment']?> 
                 </div>
             <?php }}?>
+        </div>
     </div>
 </div>
 <?php }}?>

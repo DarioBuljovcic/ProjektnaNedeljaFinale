@@ -1,32 +1,141 @@
-.loadMore{
+.loadMore {
+  display: none;
+}
+
+#userpagemsg {
+  width: 100%;
+  padding: 3px 0px;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 2px solid #424868;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+#userpagemsg:hover {
+  background-color: #424868;
+}
+
+#email {
+  margin-top: -16px !important;
+  color: gray;
+}
+
+.profile {
+  width: 70%;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  border: 5px solid hsl(0, 0%, 18.82%);
+  margin-bottom: 20px;
+}
+
+#username {
+  font-size: 20px;
+}
+
+@media only screen and (max-device-width: 425px) and (min-device-width: 376px) {
+  body {
+    margin-bottom: 80px;
+  }
+  .navsearch h2 {
     display: none;
-}
-#userpagemsg{
-    width: 100%;
-    padding: 3px 0px;
-    border-radius: 10px;
-    color: white;
-    padding: 5px 10px;
-    background-color: transparent;
-    border: 2px solid #424868;
-    transition: 0.2s;
-    border-radius: 5px;
-}
-#userpagemsg:hover{
-    background-color: #424868;
-}
-#email{
-    margin-top: -16px !important;
-    color: gray;
-}
-.profile{
-    width: 70%;
-    border-radius: 50%;
-    display: block;
+  }
+  .navsearch .searchInput {
+    width: 80%;
+    justify-content: center;
+  }
+  .navsearch .divimg {
+    display: none;
+  }
+  #userneki {
+    width: 400px;
+    left: 0;
+    right: 0;
     margin: auto;
-    border: 5px solid hsl(0, 0%, 18.82%);
+    border-bottom-right-radius: 15px;
+  }
+  .col-md-3 {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .col-md-3 .left-side {
+    max-width: 95%;
+    margin: auto;
+    position: relative;
+    top: auto;
+    z-index: 10;
+    transition: all 0.3s ease;
     margin-bottom: 20px;
-}
-#username{
+  }
+  .col-md-3 .left-side img {
+    width: 200px;
+  }
+  .conversation {
+    width: 95%;
+    padding-inline: 5px;
+  }
+  .conversation .textUsers[data-opened=false] {
+    transition: all 0.3s ease;
+    width: 0;
+  }
+  .conversation .textUsers[data-opened=true] {
+    transition: all 0.3s ease;
+    width: 170px;
+  }
+  .conversation .textUsers .msgReciver img {
+    height: 35px;
+  }
+  .conversation .textUsers .msgReciver h4 {
+    font-size: 15px;
+  }
+  .conversation .textBox {
+    position: relative;
+  }
+  .conversation .textBox .showUsers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #181c2f;
+    border: 1px solid #598ceb;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    margin: auto;
+  }
+  .conversation .textBox .showUsers i {
+    color: white;
+    font-size: 25px;
+    height: 42px;
+    transition: all 0.2s;
+  }
+  .conversation .textBox .showUsers[data-clicked=false] i {
+    transform: rotate(180deg);
+  }
+  .conversation .textBox .messages .single-msg {
+    font-size: 15px;
+  }
+  .openConv {
+    top: 5px;
+    right: 5px;
+    z-index: 999;
+    width: 45px;
+    position: absolute;
+  }
+  .openConv i {
     font-size: 20px;
-}
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+}/*# sourceMappingURL=userpage.css.map */

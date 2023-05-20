@@ -98,19 +98,13 @@ $(document).ready(()=>{
                     let id = $(e.target).closest('.single-post').attr("name");
                     let likes = parseInt($(e.target).closest('.like-btn').find('.num2Count').text());
                     let test = $(e.target).closest('.like-btn').attr('aria-pressed');
+                    
                     if(test=="true"){
-                        $.ajax({
-                            type:'POST',
-                            url:'php/LikePost.php',
-                            data:{
-                                id: id,
-                                likes: likes
-                            },success:function(){
-                                loadTop5();
-                                $(".left-side").trigger("reset");
-                            }
-                        })
-                    } else {
+                        $(e.currentTarget).removeClass('likedPost');
+                        $(e.currentTarget).find('.num1Count').css("transform","translateY(0px)");
+                        $(e.currentTarget).find('.num2Count').css("transform","translateY(-50px)");
+                        $(e.currentTarget).attr('aria-pressed','false');
+                        
                         $.ajax({
                             type:'POST',
                             url:'php/DislikePost.php',
@@ -122,9 +116,37 @@ $(document).ready(()=>{
                                 $(".left-side").trigger("reset");
                             }
                         })
+                    } else {
+                        $(e.currentTarget).addClass('likedPost');
+                        $(e.currentTarget).find('.num1Count').css("transform","translateY(50px)");
+                        $(e.currentTarget).find('.num2Count').css("transform","translateY(0px)");
+                        $(e.currentTarget).attr('aria-pressed','true');
+                        console.log('aaaa')
+                        $.ajax({
+                            type:'POST',
+                            url:'php/LikePost.php',
+                            data:{
+                                id: id,
+                                likes: likes
+                            },success:function(){
+                                loadTop5();
+                                $(".left-side").trigger("reset");
+                            }
+                        })
                     }
                     
                 });
+                $('.comment-btn').off();
+                $('.comment-btn').click((e)=>{
+                    if($(e.currentTarget).attr('aria-pressed')!='true'){
+                        $(e.target).closest('.single-post').find('.post-comments').css('grid-template-rows','1fr');
+                        $(e.currentTarget).attr('aria-pressed','true');
+                    }else {
+                        $(e.target).closest('.single-post').find('.post-comments').css('grid-template-rows','0fr');
+                        $(e.currentTarget).attr('aria-pressed','false');
+                    }
+                    
+                })
 
                 $("#search-input").off()
                 $("#search-input").on('keyup',function(e) 

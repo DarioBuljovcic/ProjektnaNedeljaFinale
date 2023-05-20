@@ -1,0 +1,174 @@
+//Dark Theme
+$backgroundClr:#0c0d15;
+//#181c2f
+$navClr:#181c2f;
+$logoP2:#598ceb;
+$fontClr1:white;
+$fontClr2:rgb(172, 172, 172);
+$leftClr:#181c2f;
+$commentClr:#181c2f;
+$actionBtnClr:#181c2f;
+$insertPostClr:#181c2f;
+$borderInput:#ababab;
+$borderInput2:rgb(48, 48, 48);
+$popupClr:#181c2f;
+$loadMoreClr:#181c2f;
+$loadBorder:#598ceb;
+$goldstar:white;
+$currentUser:#1e254d;
+.loadMore{
+    display: none;
+}
+#userpagemsg{
+    width: 100%;
+    padding: 3px 0px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid #424868;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+#userpagemsg:hover{
+    background-color: #424868;
+}
+#email{
+    margin-top: -16px !important;
+    color: gray;
+}
+.profile{
+    width: 70%;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    border: 5px solid hsl(0, 0%, 18.82%);
+    margin-bottom: 20px;
+}
+#username{
+    font-size: 20px;
+}
+
+@media only screen and (max-device-width:425px) and (min-device-width:376px) {
+    body{
+        margin-bottom: 80px;
+    }
+    
+    .navsearch{
+        //border-bottom: 1px solid $backgroundClr;
+        
+        h2{
+            display: none;
+        }
+        .searchInput{
+            width: 80%;
+            justify-content: center;
+        }
+        .divimg{
+            display: none;
+        }
+    }
+
+    #userneki{
+        width: 400px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-bottom-right-radius: 15px;
+    }
+
+    .col-md-3{
+        position: relative;
+        transition: all .3s ease;
+        .left-side{
+            max-width: 95%;
+            margin: auto;
+            position: relative;
+            top:auto;
+            z-index: 10;
+            transition: all .3s ease;
+            margin-bottom: 20px;
+            img{
+                width: 200px;
+            }
+        }
+    }
+    .conversation{
+        width: 95%;
+        padding-inline: 5px;
+        .textUsers[data-opened="false"]{
+            transition: all .3s ease;
+            width: 0;
+        }
+        .textUsers[data-opened="true"]{
+            transition: all .3s ease;
+            width: 170px;
+        }
+        .textUsers{
+            .msgReciver{
+                img{
+                    height: 35px;
+                }
+                h4{
+                    font-size:15px;
+                }           
+            }
+        }
+        .textBox{
+            position: relative;
+            .showUsers{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                background-color: $actionBtnClr;
+                border:1px solid $loadBorder;
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+                padding: 0;
+                top:0;
+                bottom:0;
+                left:-10px;
+                margin: auto;
+                i{
+                    color:white;
+                    font-size: 25px;
+                    height: 42px;    
+                    transition: all .2s;               
+                }
+                &[data-clicked="false"]{
+                    i{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .messages{
+                .single-msg{
+                    font-size: 15px;
+                }
+            }
+        }
+        
+    }
+    .openConv{
+        top:5px;
+        right: 5px;
+        z-index: 999;
+        width: 45px;
+        position: absolute;
+        i{
+            font-size: 20px;
+        }
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        img{
+
+        }
+    }
+}

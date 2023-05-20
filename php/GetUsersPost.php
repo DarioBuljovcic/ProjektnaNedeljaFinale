@@ -35,10 +35,12 @@
         </div>
     </div>
     <div class='post-comments'>
-        <form >
-            <input class= "commentValue" type='text' placeholder='Napisi komentar...'>
-            <button id="postComment" class="postComment">Comment</button>
-        </form>
+        <div class="commentContainer">
+            <form >
+                <input class= "commentValue" type='text' placeholder='Napisi komentar...'>
+                <button id="postComment" class="postComment">Comment</button>
+            </form>
+                   
             <?php
             $post_id = $row['Id'];
             $sql = "SELECT ALL* FROM comments WHERE post_id=$post_id ORDER BY post_id  ";
@@ -51,10 +53,12 @@
                 $result3 = mysqli_query($conn,$sql);
                 $username = mysqli_fetch_assoc($result3)['username'];
             ?>
+
                 <div class="single-comment">
                     <span style="color:gray" id="usernamecom"><?php echo $username?></span><?php echo $row2['comment']?> 
                 </div>
             <?php }}?>
+        </div>
     </div>
 </div>
 <?php }}?>

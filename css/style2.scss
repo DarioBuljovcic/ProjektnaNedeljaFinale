@@ -604,16 +604,20 @@ img{
             }
         }
         .post-comments {
-            display: block;
-            max-height: 0px;
+            display: grid;
+            grid-template-rows: 0fr;
             transition: all .3s;
             overflow: hidden;
             overflow-y: auto;
             margin-top: 15px;
+            .commentContainer{
+                overflow: hidden;
+            }
             form {
-                height: 40px;
+                height: auto;
                 margin-top: 15px;
                 display: flex;
+                overflow: hidden;
                 input {
                     width: 85%;
                     padding: 17px 20px;
@@ -630,7 +634,7 @@ img{
                     color: $fontClr1;
                     background-color: transparent;
                     transition: 0.3s;
-                    padding: 8px 0px;
+                    //padding: 8px 0px;
                     border-top-right-radius: 15px;
                     border-bottom-right-radius: 15px;
                     &:hover{
@@ -645,6 +649,7 @@ img{
                 border-radius: 10px;
                 position: relative;
                 word-break: break-all;
+
                 #usernamecom {
                     background-color: $insertPostClr;
                     color:#bbbbbb !important;
@@ -892,8 +897,11 @@ footer{
     }
     & ~ div{
         z-index: -100 !important;
+        transform: scaleX(0) scaleY(0);
     }
 }
+
+
 
 @media only screen and (max-device-width:425px) and (min-device-width:376px) {
     body{
@@ -928,11 +936,11 @@ footer{
         transition: all .3s ease;
         .left-side{
             max-width: 95%;
-            position: absolute;
+            position: fixed;
             left: 0;
             right: 0;
             margin: auto;
-            transform: translateY(-500px);
+            top:-100%;
             z-index: 10000;
             transition: all .3s ease;
         }
