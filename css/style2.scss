@@ -1158,7 +1158,25 @@ footer{
     body{
         margin-bottom: 80px;
     }
-    
+    .particles-js-canvas-el{
+        left: 0;
+    }
+    .popup-prof{
+        border: 2px solid rgb(48, 48, 48);
+    }
+ 
+    .right-side{
+        padding: 5px;
+        border: none;
+        .single-post{
+            .post-content{
+                font-size: 18px;
+            }
+            .post-actions{
+                font-size: 15px;
+            }
+        }  
+    }
     .navsearch{
         border-bottom: 1px solid $backgroundClr;
         
@@ -1175,7 +1193,7 @@ footer{
     }
 
     #userneki{
-        width: 90%;
+        width: 95%;
         left: 0;
         right: 0;
         margin: auto;
@@ -1194,7 +1212,7 @@ footer{
             top:-100%;
             z-index: 10000;
             transition: all .3s ease;
-        }
+        }    
     }
     .conversation{
         width: 95%;
@@ -1276,5 +1294,12 @@ footer{
         img{
 
         }
+    }
+}
+@media only screen and (max-device-width:768px) and (min-device-width:425px) 
+{
+    #userneki{
+        left: 260px;
+        width: 50%;
     }
 }

@@ -1087,6 +1087,22 @@ footer ~ div {
   body {
     margin-bottom: 80px;
   }
+  .particles-js-canvas-el {
+    left: 0;
+  }
+  .popup-prof {
+    border: 2px solid rgb(48, 48, 48);
+  }
+  .right-side {
+    padding: 5px;
+    border: none;
+  }
+  .right-side .single-post .post-content {
+    font-size: 18px;
+  }
+  .right-side .single-post .post-actions {
+    font-size: 15px;
+  }
   .navsearch {
     border-bottom: 1px solid #0c0d15;
   }
@@ -1101,7 +1117,7 @@ footer ~ div {
     display: none;
   }
   #userneki {
-    width: 90%;
+    width: 95%;
     left: 0;
     right: 0;
     margin: auto;
@@ -1188,5 +1204,11 @@ footer ~ div {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+  }
+}
+@media only screen and (max-device-width: 768px) and (min-device-width: 425px) {
+  #userneki {
+    left: 260px;
+    width: 50%;
   }
 }/*# sourceMappingURL=style2.css.map */
