@@ -902,8 +902,8 @@ footer{
 }
 
 
-
-@media only screen and (max-device-width:425px) and (min-device-width:376px) {
+//L
+@media only screen and (max-device-width:425px) and (min-device-width:375px) {
     body{
         margin-bottom: 80px;
     }
@@ -924,7 +924,132 @@ footer{
     }
 
     #userneki{
-        width: 400px;
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-bottom-right-radius: 15px;
+    }
+
+    .col-md-3{
+        position: absolute;
+        transition: all .3s ease;
+        .left-side{
+            max-width: 95%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top:-100%;
+            z-index: 10000;
+            transition: all .3s ease;
+        }
+    }
+    #postForm{
+        height: 70px;
+    }
+    .conversation{
+        width: 95%;
+        padding-inline: 5px;
+        .textUsers[data-opened="false"]{
+            transition: all .3s ease;
+            width: 0;
+        }
+        .textUsers[data-opened="true"]{
+            transition: all .3s ease;
+            width: 170px;
+        }
+        .textUsers{
+            .msgReciver{
+                img{
+                    height: 35px;
+                }
+                h4{
+                    font-size:15px;
+                }           
+            }
+        }
+        .textBox{
+            position: relative;
+            .showUsers{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                background-color: $actionBtnClr;
+                border:1px solid $loadBorder;
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+                padding: 0;
+                top:0;
+                bottom:0;
+                left:-10px;
+                margin: auto;
+                i{
+                    color:white;
+                    font-size: 25px;
+                    height: 42px;    
+                    transition: all .2s;               
+                }
+                &[data-clicked="false"]{
+                    i{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .messages{
+                .single-msg{
+                    font-size: 15px;
+                }
+            }
+        }
+        
+    }
+    .openConv{
+        top:5px;
+        right: 5px;
+        z-index: 999;
+        width: 45px;
+        position: absolute;
+        i{
+            font-size: 20px;
+        }
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        img{
+
+        }
+    }
+}
+//M
+@media only screen and (max-device-width:375px) and (min-device-width:320px) {
+    body{
+        margin-bottom: 80px;
+    }
+    
+    .navsearch{
+        border-bottom: 1px solid $backgroundClr;
+        
+        h2{
+            display: none;
+        }
+        .searchInput{
+            width: 80%;
+            justify-content: center;
+        }
+        .divimg{
+            display: none;
+        }
+    }
+
+    #userneki{
+        width: 90%;
         left: 0;
         right: 0;
         margin: auto;
@@ -1012,6 +1137,135 @@ footer{
         i{
             font-size: 20px;
         }
+    }
+    
+    #postForm{
+        height: 60px;
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        img{
+
+        }
+    }
+}
+//S
+@media only screen and (max-device-width:320px) and (min-device-width:250px) {
+    body{
+        margin-bottom: 80px;
+    }
+    
+    .navsearch{
+        border-bottom: 1px solid $backgroundClr;
+        
+        h2{
+            display: none;
+        }
+        .searchInput{
+            width: 80%;
+            justify-content: center;
+        }
+        .divimg{
+            display: none;
+        }
+    }
+
+    #userneki{
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-bottom-right-radius: 15px;
+    }
+
+    .col-md-3{
+        position: absolute;
+        transition: all .3s ease;
+        .left-side{
+            max-width: 95%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top:-100%;
+            z-index: 10000;
+            transition: all .3s ease;
+        }
+    }
+    .conversation{
+        width: 95%;
+        padding-inline: 5px;
+        .textUsers[data-opened="false"]{
+            transition: all .3s ease;
+            width: 0;
+        }
+        .textUsers[data-opened="true"]{
+            transition: all .3s ease;
+            width: 170px;
+        }
+        .textUsers{
+            .msgReciver{
+                img{
+                    height: 35px;
+                }
+                h4{
+                    font-size:15px;
+                }           
+            }
+        }
+        .textBox{
+            position: relative;
+            .showUsers{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                background-color: $actionBtnClr;
+                border:1px solid $loadBorder;
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+                padding: 0;
+                top:0;
+                bottom:0;
+                left:-10px;
+                margin: auto;
+                i{
+                    color:white;
+                    font-size: 25px;
+                    height: 42px;    
+                    transition: all .2s;               
+                }
+                &[data-clicked="false"]{
+                    i{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .messages{
+                .single-msg{
+                    font-size: 15px;
+                }
+            }
+        }
+        
+    }
+    .openConv{
+        top:5px;
+        right: 5px;
+        z-index: 999;
+        width: 45px;
+        position: absolute;
+        i{
+            font-size: 20px;
+        }
+    }
+    #postForm{
+        height: 60px;
     }
 
     footer{
