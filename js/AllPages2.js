@@ -98,5 +98,8 @@ $('.navimg').click(e=>{
         $('.popup-prof').attr('data-opened','false');
     }
 });
+$('#closeModal').click(e =>{
+    $('.custom-modal').css('display','block')
+})
 
 
